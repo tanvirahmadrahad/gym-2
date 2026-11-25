@@ -1,10 +1,9 @@
-@extends('layouts.app', ['title' => 'Athlete Profile & Membership - FITNES'])
+@extends('layouts.app', ['title' => 'Athlete Profile & Membership — Gymstick'])
 
 @section('content')
-<div class="min-h-screen bg-[#0a0c10] text-[#f3f4f6] py-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-    <!-- Ambient Background Glows -->
-    <div class="absolute top-12 left-1/4 w-96 h-96 bg-[#e2ff38]/5 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="absolute bottom-12 right-1/4 w-96 h-96 bg-[#00d2ff]/5 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="min-h-screen bg-[#080a0f] text-[#f3f4f6] py-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <!-- Ambient Background Watermark -->
+    <div class="bg-watermark top-12 left-1/2 -translate-x-1/2 text-[15vw] leading-none whitespace-nowrap opacity-20">PROFILE</div>
 
     <div class="max-w-7xl mx-auto space-y-8 relative z-10">
 
@@ -13,7 +12,7 @@
             <div class="flex items-center gap-4 sm:gap-5">
                 <!-- Avatar with Status Ring -->
                 <div class="relative">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-[#1e2638] to-[#121620] border-2 border-[#e2ff38] flex items-center justify-center text-2xl sm:text-3xl font-heading font-black text-[#e2ff38] shadow-lg shadow-[#e2ff38]/10">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-[#1e2638] to-[#121620] border-2 border-[#ff5e14] flex items-center justify-center text-2xl sm:text-3xl font-heading font-black text-[#ff9e58] shadow-lg shadow-[#ff5e14]/10">
                         {{ strtoupper(substr($profile['name'], 0, 2)) }}
                     </div>
                     <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-[#131722] rounded-full animate-pulse" title="Status: Online & Active Member"></span>
@@ -25,7 +24,7 @@
                         <h1 class="font-heading text-2xl sm:text-3xl font-black text-white tracking-wide">
                             {{ $profile['name'] }}
                         </h1>
-                        <span class="px-2.5 py-0.5 rounded-full bg-[#e2ff38]/15 border border-[#e2ff38]/40 text-[#e2ff38] text-[10px] font-black uppercase tracking-wider">
+                        <span class="px-2.5 py-0.5 rounded-full bg-[#ff5e14]/15 border border-[#ff5e14]/40 text-[#ff9e58] text-[10px] font-black uppercase tracking-wider">
                             <i class="fa-solid fa-circle-check text-[9px] mr-1"></i> {{ $profile['membership_status'] }}
                         </span>
                         <span class="px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-semibold">
@@ -35,7 +34,7 @@
                     <p class="text-xs text-gray-400 flex items-center gap-2 flex-wrap">
                         <span><i class="fa-regular fa-envelope text-gray-500 mr-1"></i> {{ $profile['email'] }}</span>
                         <span class="text-white/20">•</span>
-                        <span><i class="fa-regular fa-id-badge text-[#e2ff38] mr-1"></i> Gym ID: <strong class="text-white font-mono">{{ $profile['gym_id'] }}</strong></span>
+                        <span><i class="fa-regular fa-id-badge text-[#ff9e58] mr-1"></i> Gym ID: <strong class="text-white font-mono">{{ $profile['gym_id'] }}</strong></span>
                         <span class="text-white/20">•</span>
                         <span><i class="fa-regular fa-calendar-check text-gray-500 mr-1"></i> Member Since: {{ $profile['member_since'] }}</span>
                     </p>
@@ -49,12 +48,12 @@
                     onclick="openEditProfileModal()" 
                     class="flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl border border-white/10 transition-all cursor-pointer"
                 >
-                    <i class="fa-solid fa-user-pen text-[#e2ff38]"></i>
+                    <i class="fa-solid fa-user-pen text-[#ff9e58]"></i>
                     <span>Edit Profile</span>
                 </button>
                 <a 
                     href="{{ route('home') }}" 
-                    class="flex items-center gap-2 bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-all shadow-md shadow-[#e2ff38]/20"
+                    class="flex items-center gap-2 btn-glow-orange text-white text-xs font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-all shadow-md shadow-[#ff5e14]/30"
                 >
                     <i class="fa-solid fa-house"></i>
                     <span>Back to Home</span>
@@ -82,35 +81,35 @@
             <div class="lg:col-span-1 space-y-4">
                 <div class="flex items-center justify-between">
                     <h2 class="font-heading text-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                        <i class="fa-solid fa-id-card text-[#e2ff38]"></i>
+                        <i class="fa-solid fa-id-card text-[#ff9e58]"></i>
                         <span>Digital Gym Pass</span>
                     </h2>
                     <span class="text-[10px] text-gray-400 uppercase tracking-widest font-mono">SCAN READY</span>
                 </div>
 
                 <!-- Authentic Digital RFID Member Card -->
-                <div class="relative rounded-2xl p-6 bg-gradient-to-tr from-[#0e121a] via-[#161d2d] to-[#1a2337] border-2 border-[#e2ff38]/40 shadow-2xl overflow-hidden group">
+                <div class="relative rounded-2xl p-6 bg-gradient-to-tr from-[#0e121a] via-[#161d2d] to-[#1a2337] border-2 border-[#ff5e14]/40 shadow-2xl overflow-hidden group">
                     <!-- Subtle Gym Glow Background -->
-                    <div class="absolute -top-12 -right-12 w-40 h-40 bg-[#e2ff38]/10 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700"></div>
+                    <div class="absolute -top-12 -right-12 w-40 h-40 bg-[#ff5e14]/15 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700"></div>
 
                     <!-- Top Card Row: Logo & RFID Symbol -->
                     <div class="flex items-center justify-between relative z-10 pb-4">
                         <div class="flex items-center gap-2">
                             <div class="flex items-center gap-[2px] h-6">
-                                <span class="w-[3px] h-3 bg-[#e2ff38] rounded-full"></span>
-                                <span class="w-[4px] h-5 bg-[#e2ff38] rounded-full"></span>
-                                <span class="w-[4px] h-4 bg-[#e2ff38] rounded-full"></span>
-                                <span class="w-[3px] h-2 bg-[#e2ff38] rounded-full"></span>
+                                <span class="w-[3px] h-3 bg-[#ff5e14] rounded-full"></span>
+                                <span class="w-[4px] h-5 bg-[#ff5e14] rounded-full"></span>
+                                <span class="w-[4px] h-4 bg-[#ff5e14] rounded-full"></span>
+                                <span class="w-[3px] h-2 bg-[#ff5e14] rounded-full"></span>
                             </div>
                             <div>
-                                <span class="font-heading text-base font-black tracking-wider text-white">FITNES</span>
-                                <span class="text-[7px] block tracking-[0.2em] text-[#e2ff38] font-bold">ALL-ACCESS</span>
+                                <span class="font-heading text-base font-black tracking-wider text-white">Gymstick</span>
+                                <span class="text-[7px] block tracking-[0.2em] text-[#ff9e58] font-bold">ALL-ACCESS</span>
                             </div>
                         </div>
 
                         <!-- RFID Chip & Contactless waves -->
                         <div class="flex items-center gap-1.5 text-gray-400">
-                            <i class="fa-solid fa-wifi rotate-90 text-[#e2ff38] text-xs"></i>
+                            <i class="fa-solid fa-wifi rotate-90 text-[#ff9e58] text-xs"></i>
                             <span class="text-[9px] uppercase font-bold tracking-wider text-gray-400">RFID</span>
                         </div>
                     </div>
@@ -142,7 +141,7 @@
                         </div>
                         <div class="text-right">
                             <span class="text-[9px] text-gray-400 uppercase tracking-widest block font-medium">Access Tier</span>
-                            <span class="text-xs font-black text-[#e2ff38] uppercase">
+                            <span class="text-xs font-black text-[#ff9e58] uppercase">
                                 PRO ATHLETE
                             </span>
                         </div>
@@ -160,7 +159,7 @@
                 </div>
 
                 <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-gray-400 flex items-center gap-3">
-                    <i class="fa-solid fa-turnstile text-base text-[#e2ff38]"></i>
+                    <i class="fa-solid fa-turnstile text-base text-[#ff9e58]"></i>
                     <p class="leading-relaxed">
                         Present this digital pass or mention your Gym ID <strong class="text-white">{{ $profile['gym_id'] }}</strong> at the front reception turnstiles for instant entry.
                     </p>
@@ -171,13 +170,13 @@
             <div class="lg:col-span-2 space-y-4">
                 <div class="flex items-center justify-between">
                     <h2 class="font-heading text-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                        <i class="fa-solid fa-clipboard-user text-[#e2ff38]"></i>
+                        <i class="fa-solid fa-clipboard-user text-[#ff9e58]"></i>
                         <span>Athlete Profile Information</span>
                     </h2>
                     <button 
                         type="button" 
                         onclick="openEditProfileModal()" 
-                        class="text-xs text-[#e2ff38] font-bold hover:underline cursor-pointer"
+                        class="text-xs text-[#ff9e58] font-bold hover:underline cursor-pointer"
                     >
                         Update Info
                     </button>
@@ -191,7 +190,7 @@
                                 Full Name
                             </span>
                             <span class="font-heading text-base font-bold text-white flex items-center gap-2">
-                                <i class="fa-regular fa-user text-[#e2ff38] text-sm"></i>
+                                <i class="fa-regular fa-user text-[#ff9e58] text-sm"></i>
                                 {{ $profile['name'] }}
                             </span>
                         </div>
@@ -202,7 +201,7 @@
                                 Email Address
                             </span>
                             <span class="text-xs font-semibold text-white flex items-center gap-2 truncate">
-                                <i class="fa-regular fa-envelope text-[#e2ff38] text-sm"></i>
+                                <i class="fa-regular fa-envelope text-[#ff9e58] text-sm"></i>
                                 {{ $profile['email'] }}
                             </span>
                         </div>
@@ -213,7 +212,7 @@
                                 Phone Number
                             </span>
                             <span class="text-xs font-semibold text-white flex items-center gap-2">
-                                <i class="fa-solid fa-phone text-[#e2ff38] text-sm"></i>
+                                <i class="fa-solid fa-phone text-[#ff9e58] text-sm"></i>
                                 {{ $profile['phone'] }}
                             </span>
                         </div>
@@ -234,7 +233,7 @@
                             <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-1">
                                 Blood Group
                             </span>
-                            <span class="text-xs font-bold text-[#e2ff38] flex items-center gap-2">
+                            <span class="text-xs font-bold text-[#ff9e58] flex items-center gap-2">
                                 <i class="fa-solid fa-droplet text-rose-500 text-sm"></i>
                                 {{ $profile['blood_group'] }}
                             </span>
@@ -246,7 +245,7 @@
                                 Assigned Locker
                             </span>
                             <span class="text-xs font-semibold text-white flex items-center gap-2">
-                                <i class="fa-solid fa-key text-[#e2ff38] text-sm"></i>
+                                <i class="fa-solid fa-key text-[#ff9e58] text-sm"></i>
                                 {{ $profile['locker_number'] }}
                             </span>
                         </div>
@@ -268,23 +267,23 @@
                                 Assigned Coach / Trainer
                             </span>
                             <span class="text-xs font-semibold text-white flex items-center gap-2">
-                                <i class="fa-solid fa-dumbbell text-[#e2ff38] text-sm"></i>
+                                <i class="fa-solid fa-dumbbell text-[#ff9e58] text-sm"></i>
                                 {{ $profile['trainer_name'] }}
                             </span>
                         </div>
                     </div>
 
                     <!-- Fitness Goals Banner -->
-                    <div class="mt-5 p-4 rounded-xl bg-gradient-to-r from-[#182030] to-[#141a24] border border-[#e2ff38]/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                    <div class="mt-5 p-4 rounded-xl bg-gradient-to-r from-[#182030] to-[#141a24] border border-[#ff5e14]/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                         <div>
-                            <span class="text-[10px] font-bold text-[#e2ff38] uppercase tracking-wider block">
+                            <span class="text-[10px] font-bold text-[#ff9e58] uppercase tracking-wider block">
                                 Primary Athletic Objective
                             </span>
                             <p class="font-heading text-sm font-bold text-white mt-0.5">
                                 {{ $profile['fitness_goal'] }}
                             </p>
                         </div>
-                        <span class="px-3 py-1 rounded-lg bg-[#e2ff38]/10 text-[#e2ff38] text-xs font-bold border border-[#e2ff38]/30 shrink-0">
+                        <span class="px-3 py-1 rounded-lg bg-[#ff5e14]/15 text-[#ff9e58] text-xs font-bold border border-[#ff5e14]/30 shrink-0">
                             On Track (Phase 2)
                         </span>
                     </div>
@@ -295,20 +294,20 @@
         <!-- Grid 2: Current Membership Status & Package -->
         <div class="space-y-4">
             <h2 class="font-heading text-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                <i class="fa-solid fa-cubes text-[#e2ff38]"></i>
+                <i class="fa-solid fa-cubes text-[#ff9e58]"></i>
                 <span>Current Gym Membership & Active Package</span>
             </h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Package Summary Card (1 Col) -->
-                <div class="bg-gradient-to-b from-[#161c28] to-[#10141e] border-2 border-[#e2ff38]/30 rounded-2xl p-6 sm:p-7 shadow-xl flex flex-col justify-between relative overflow-hidden">
+                <div class="bg-gradient-to-b from-[#161c28] to-[#10141e] border-2 border-[#ff5e14]/30 rounded-2xl p-6 sm:p-7 shadow-xl flex flex-col justify-between relative overflow-hidden">
                     <div class="absolute top-0 right-0 transform translate-x-4 -translate-y-2">
                         <span class="text-6xl text-white/5 font-black font-heading select-none pointer-events-none">PRO</span>
                     </div>
 
                     <div>
                         <div class="flex items-center justify-between mb-3">
-                            <span class="px-3 py-1 rounded-full bg-[#e2ff38] text-black font-extrabold text-[10px] uppercase tracking-widest">
+                            <span class="px-3 py-1 rounded-full bg-[#ff5e14] text-black font-extrabold text-[10px] uppercase tracking-widest">
                                 CURRENT ACTIVE PLAN
                             </span>
                             <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-bold">
@@ -321,7 +320,7 @@
                             {{ $profile['package_name'] }}
                         </h3>
                         <div class="flex items-baseline gap-1 my-3">
-                            <span class="font-heading text-3xl font-black text-[#e2ff38]">{{ $profile['package_price'] }}</span>
+                            <span class="font-heading text-3xl font-black text-[#ff9e58]">{{ $profile['package_price'] }}</span>
                         </div>
 
                         <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-gray-300">
@@ -346,7 +345,7 @@
                         <button 
                             type="button" 
                             onclick="openRenewModal()"
-                            class="flex-1 bg-[#e2ff38] hover:bg-[#d0ee27] text-black font-extrabold text-xs uppercase tracking-wider py-2.5 px-3 rounded-lg transition-all text-center cursor-pointer shadow-md shadow-[#e2ff38]/20 flex items-center justify-center gap-1.5"
+                            class="flex-1 btn-glow-orange text-white font-extrabold text-xs uppercase tracking-wider py-2.5 px-3 rounded-lg transition-all text-center cursor-pointer shadow-md shadow-[#ff5e14]/30 flex items-center justify-center gap-1.5"
                         >
                             <i class="fa-solid fa-clock-rotate-left text-xs"></i>
                             <span>Renew / Extend</span>
@@ -354,7 +353,7 @@
                         <button 
                             type="button" 
                             onclick="openChangePlanModal()"
-                            class="flex-1 bg-white/5 hover:bg-white/10 text-white hover:text-[#e2ff38] font-bold text-xs uppercase tracking-wider py-2.5 px-3 rounded-lg border border-white/10 transition-all text-center cursor-pointer flex items-center justify-center gap-1.5"
+                            class="flex-1 bg-white/5 hover:bg-white/10 text-white hover:text-[#ff9e58] font-bold text-xs uppercase tracking-wider py-2.5 px-3 rounded-lg border border-white/10 transition-all text-center cursor-pointer flex items-center justify-center gap-1.5"
                         >
                             <i class="fa-solid fa-arrows-rotate text-xs"></i>
                             <span>Change Plan</span>
@@ -373,14 +372,14 @@
                 <!-- Included Privileges & Workout Attendance Progress (2 Cols) -->
                 <div class="lg:col-span-2 bg-[#131722] border border-white/10 rounded-2xl p-6 sm:p-7 shadow-xl flex flex-col justify-between">
                     <div>
-                        <h4 class="font-heading text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-[#e2ff38] pl-2.5">
+                        <h4 class="font-heading text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-[#ff5e14] pl-2.5">
                             Included Privileges & Gym Access
                         </h4>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                             @foreach ($packageFeatures as $feature)
                                 <div class="flex items-start gap-2.5 text-xs text-gray-300 p-2.5 rounded-lg bg-[#182030] border border-white/5">
-                                    <i class="fa-solid fa-circle-check text-[#e2ff38] text-sm mt-0.5 shrink-0"></i>
+                                    <i class="fa-solid fa-circle-check text-[#ff9e58] text-sm mt-0.5 shrink-0"></i>
                                     <span class="leading-relaxed">{{ $feature }}</span>
                                 </div>
                             @endforeach
@@ -394,14 +393,14 @@
                                 <i class="fa-solid fa-fire text-[#ff5e36]"></i>
                                 Monthly Workout Consistency (October 2026)
                             </span>
-                            <span class="text-[#e2ff38] font-bold">
+                            <span class="text-[#ff9e58] font-bold">
                                 {{ $activity['monthly_visits'] }} of {{ $activity['monthly_target'] }} Sessions ({{ round(($activity['monthly_visits'] / $activity['monthly_target']) * 100) }}%)
                             </span>
                         </div>
 
                         <!-- Progress Bar -->
                         <div class="w-full bg-black/40 rounded-full h-3 overflow-hidden p-0.5 border border-white/10">
-                            <div class="bg-gradient-to-r from-[#e2ff38] to-emerald-400 h-full rounded-full transition-all duration-1000" style="width: {{ ($activity['monthly_visits'] / $activity['monthly_target']) * 100 }}%"></div>
+                            <div class="bg-gradient-to-r from-[#ff7a1a] to-[#ff5e14] h-full rounded-full transition-all duration-1000" style="width: {{ ($activity['monthly_visits'] / $activity['monthly_target']) * 100 }}%"></div>
                         </div>
 
                         <div class="grid grid-cols-3 gap-2 text-center pt-1 text-[11px] text-gray-400">
@@ -418,14 +417,14 @@
             <div class="flex items-center justify-between flex-wrap gap-2">
                 <div>
                     <h2 class="font-heading text-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                        <i class="fa-solid fa-medal text-[#e2ff38]"></i>
+                        <i class="fa-solid fa-medal text-[#ff9e58]"></i>
                         <span>Athlete Badges & Achievements</span>
                     </h2>
                     <p class="text-xs text-gray-400">Track unlocked powerlifting PRs, consistency streaks, and turnstile milestones.</p>
                 </div>
                 <a 
                     href="{{ route('leaderboard') }}" 
-                    class="text-xs text-[#e2ff38] font-bold hover:underline flex items-center gap-1.5 bg-[#e2ff38]/10 hover:bg-[#e2ff38]/20 border border-[#e2ff38]/30 px-3 py-1.5 rounded-full transition-all"
+                    class="text-xs text-[#ff9e58] font-bold hover:underline flex items-center gap-1.5 bg-[#ff5e14]/15 hover:bg-[#ff5e14]/20 border border-[#ff5e14]/30 px-3 py-1.5 rounded-full transition-all"
                 >
                     <i class="fa-solid fa-trophy text-xs"></i>
                     <span>View Gym Leaderboard (#4 Ranked)</span>
@@ -435,12 +434,12 @@
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <!-- Badge 1: Iron Warrior -->
-                <div class="p-4 rounded-2xl bg-gradient-to-b from-[#e2ff38]/10 to-[#131722] border-2 border-[#e2ff38]/50 shadow-lg space-y-2 relative overflow-hidden">
+                <div class="p-4 rounded-2xl bg-gradient-to-b from-[#ff5e14]/15 to-[#0e121a] border-2 border-[#ff5e14]/50 shadow-lg space-y-2 relative overflow-hidden">
                     <div class="flex items-center justify-between">
-                        <div class="w-10 h-10 rounded-xl bg-[#e2ff38] text-black flex items-center justify-center text-lg font-bold shadow-md shadow-[#e2ff38]/30">
+                        <div class="w-10 h-10 rounded-xl bg-[#ff5e14] text-black flex items-center justify-center text-lg font-bold shadow-md shadow-[#ff5e14]/30">
                             <i class="fa-solid fa-dumbbell"></i>
                         </div>
-                        <span class="px-2 py-0.5 rounded-full bg-[#e2ff38] text-black text-[9px] font-black uppercase">
+                        <span class="px-2 py-0.5 rounded-full bg-[#ff5e14] text-black text-[9px] font-black uppercase">
                             UNLOCKED
                         </span>
                     </div>
@@ -449,7 +448,7 @@
                         <p class="text-[11px] text-gray-400 mt-0.5">100+ kg lift verified (Current: 130 kg PR).</p>
                     </div>
                     <div class="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
-                        <div class="bg-[#e2ff38] h-full rounded-full w-full"></div>
+                        <div class="bg-[#ff5e14] h-full rounded-full w-full"></div>
                     </div>
                 </div>
 
@@ -517,13 +516,13 @@
             <div class="flex items-center justify-between flex-wrap gap-2">
                 <div>
                     <h2 class="font-heading text-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                        <i class="fa-solid fa-wand-magic-sparkles text-[#e2ff38]"></i>
+                        <i class="fa-solid fa-wand-magic-sparkles text-[#ff9e58]"></i>
                         <span>Smart Workout Routine Generator</span>
                     </h2>
                     <p class="text-xs text-gray-400">Curated splits designed for maximum hypertrophy & strength. Tap any exercise to auto-load directly into your logger below.</p>
                 </div>
                 <div class="flex items-center gap-1.5">
-                    <button type="button" onclick="switchRoutineTab('ppl')" id="tab-btn-ppl" class="routine-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition-all bg-[#e2ff38] text-black cursor-pointer">PPL (Push/Pull/Legs)</button>
+                    <button type="button" onclick="switchRoutineTab('ppl')" id="tab-btn-ppl" class="routine-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition-all bg-[#ff5e14] text-black cursor-pointer">PPL (Push/Pull/Legs)</button>
                     <button type="button" onclick="switchRoutineTab('upper_lower')" id="tab-btn-upper_lower" class="routine-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition-all bg-[#182030] text-gray-300 hover:text-white border border-white/5 cursor-pointer">Upper / Lower</button>
                     <button type="button" onclick="switchRoutineTab('full_body')" id="tab-btn-full_body" class="routine-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold uppercase transition-all bg-[#182030] text-gray-300 hover:text-white border border-white/5 cursor-pointer">Full Body Shred</button>
                 </div>
@@ -537,7 +536,7 @@
                         <div>
                             <div class="flex items-center gap-2">
                                 <h3 class="font-heading text-base font-bold text-white uppercase tracking-wider">Push / Pull / Legs (PPL Hypertrophy Split)</h3>
-                                <span class="px-2 py-0.5 rounded-md bg-[#e2ff38]/15 text-[#e2ff38] border border-[#e2ff38]/30 text-[10px] font-black uppercase">6 Days / Wk</span>
+                                <span class="px-2 py-0.5 rounded-md bg-[#ff5e14]/15 text-[#ff9e58] border border-[#ff5e14]/30 text-[10px] font-black uppercase">6 Days / Wk</span>
                             </div>
                             <p class="text-xs text-gray-400 mt-0.5">Optimal compound volume for rapid muscle hypertrophy and progressive overload.</p>
                         </div>
@@ -548,7 +547,7 @@
                         <div class="p-4 rounded-xl bg-[#182030] border border-white/5 space-y-3">
                             <div class="flex items-center justify-between">
                                 <span class="font-bold text-white text-xs flex items-center gap-1.5 uppercase">
-                                    <i class="fa-solid fa-shield-halved text-[#e2ff38]"></i> Day 1: Push Focus
+                                    <i class="fa-solid fa-shield-halved text-[#ff9e58]"></i> Day 1: Push Focus
                                 </span>
                                 <span class="text-[9px] text-gray-400 font-mono">5 Exercises</span>
                             </div>
@@ -558,7 +557,7 @@
                                         <div class="font-bold text-white">Barbell Bench Press</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 8 reps • 80 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Barbell Bench Press', 'Chest', 80.0, 4, 8)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Barbell Bench Press', 'Chest', 80.0, 4, 8)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -567,7 +566,7 @@
                                         <div class="font-bold text-white">Incline DB Press</div>
                                         <div class="text-[10px] text-gray-400">3 sets &times; 10 reps • 26 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Incline Dumbbell Press', 'Chest', 26.0, 3, 10)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Incline Dumbbell Press', 'Chest', 26.0, 3, 10)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -576,7 +575,7 @@
                                         <div class="font-bold text-white">Overhead DB Press</div>
                                         <div class="text-[10px] text-gray-400">3 sets &times; 10 reps • 20 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Overhead Dumbbell Press', 'Shoulders', 20.0, 3, 10)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Overhead Dumbbell Press', 'Shoulders', 20.0, 3, 10)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -585,7 +584,7 @@
                                         <div class="font-bold text-white">Cable Lateral Raise</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 15 reps • 10 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Cable Lateral Raise', 'Shoulders', 10.0, 4, 15)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Cable Lateral Raise', 'Shoulders', 10.0, 4, 15)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -594,7 +593,7 @@
                                         <div class="font-bold text-white">Triceps Rope Pushdown</div>
                                         <div class="text-[10px] text-gray-400">3 sets &times; 12 reps • 25 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Triceps Rope Pushdown', 'Arms', 25.0, 3, 12)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Triceps Rope Pushdown', 'Arms', 25.0, 3, 12)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -615,7 +614,7 @@
                                         <div class="font-bold text-white">Conventional Deadlift</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 5 reps • 120 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Conventional Deadlift', 'Back', 120.0, 4, 5)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Conventional Deadlift', 'Back', 120.0, 4, 5)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -624,7 +623,7 @@
                                         <div class="font-bold text-white">Lat Pulldown</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 10 reps • 60 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Lat Pulldown', 'Back', 60.0, 4, 10)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Lat Pulldown', 'Back', 60.0, 4, 10)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -633,7 +632,7 @@
                                         <div class="font-bold text-white">Barbell Row</div>
                                         <div class="text-[10px] text-gray-400">3 sets &times; 8 reps • 70 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Barbell Row', 'Back', 70.0, 3, 8)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Barbell Row', 'Back', 70.0, 3, 8)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -642,7 +641,7 @@
                                         <div class="font-bold text-white">Cable Face Pulls</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 15 reps • 20 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Cable Face Pulls', 'Shoulders', 20.0, 4, 15)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Cable Face Pulls', 'Shoulders', 20.0, 4, 15)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -651,7 +650,7 @@
                                         <div class="font-bold text-white">Incline DB Curl</div>
                                         <div class="text-[10px] text-gray-400">3 sets &times; 12 reps • 14 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Incline DB Curl', 'Arms', 14.0, 3, 12)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Incline DB Curl', 'Arms', 14.0, 3, 12)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -672,7 +671,7 @@
                                         <div class="font-bold text-white">Barbell Back Squat</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 8 reps • 100 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Barbell Back Squat', 'Legs', 100.0, 4, 8)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Barbell Back Squat', 'Legs', 100.0, 4, 8)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -681,7 +680,7 @@
                                         <div class="font-bold text-white">Romanian Deadlift (RDL)</div>
                                         <div class="text-[10px] text-gray-400">3 sets &times; 10 reps • 80 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Romanian Deadlift (RDL)', 'Legs', 80.0, 3, 10)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Romanian Deadlift (RDL)', 'Legs', 80.0, 3, 10)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -690,7 +689,7 @@
                                         <div class="font-bold text-white">Seated Leg Press</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 12 reps • 160 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Seated Leg Press', 'Legs', 160.0, 4, 12)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Seated Leg Press', 'Legs', 160.0, 4, 12)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -699,7 +698,7 @@
                                         <div class="font-bold text-white">Standing Calf Raise</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 15 reps • 65 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Standing Calf Raise', 'Legs', 65.0, 4, 15)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Standing Calf Raise', 'Legs', 65.0, 4, 15)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -708,7 +707,7 @@
                                         <div class="font-bold text-white">Hanging Knee Raises</div>
                                         <div class="text-[10px] text-gray-400">3 sets &times; 15 reps • Bodyweight</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Hanging Knee Raises', 'Core', 0.0, 3, 15)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
+                                    <button type="button" onclick="loadExerciseIntoForm('Hanging Knee Raises', 'Core', 0.0, 3, 15)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">
                                         ⚡ Load
                                     </button>
                                 </div>
@@ -733,7 +732,7 @@
                         <!-- Upper Power Card -->
                         <div class="p-4 rounded-xl bg-[#182030] border border-white/5 space-y-3">
                             <span class="font-bold text-white text-xs flex items-center gap-1.5 uppercase">
-                                <i class="fa-solid fa-arrows-up-down text-[#e2ff38]"></i> Day 1: Upper Power
+                                <i class="fa-solid fa-arrows-up-down text-[#ff9e58]"></i> Day 1: Upper Power
                             </span>
                             <div class="space-y-2 text-xs">
                                 <div class="p-2.5 rounded-lg bg-black/30 border border-white/5 flex items-center justify-between">
@@ -741,21 +740,21 @@
                                         <div class="font-bold text-white">Incline Barbell Bench</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 6 reps • 75 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Incline Barbell Bench', 'Chest', 75.0, 4, 6)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
+                                    <button type="button" onclick="loadExerciseIntoForm('Incline Barbell Bench', 'Chest', 75.0, 4, 6)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
                                 </div>
                                 <div class="p-2.5 rounded-lg bg-black/30 border border-white/5 flex items-center justify-between">
                                     <div>
                                         <div class="font-bold text-white">Weighted Pull-Ups</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 6 reps • +15 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Weighted Pull-Ups', 'Back', 15.0, 4, 6)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
+                                    <button type="button" onclick="loadExerciseIntoForm('Weighted Pull-Ups', 'Back', 15.0, 4, 6)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
                                 </div>
                                 <div class="p-2.5 rounded-lg bg-black/30 border border-white/5 flex items-center justify-between">
                                     <div>
                                         <div class="font-bold text-white">Standing Overhead Press</div>
                                         <div class="text-[10px] text-gray-400">3 sets &times; 8 reps • 50 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Standing Overhead Press', 'Shoulders', 50.0, 3, 8)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
+                                    <button type="button" onclick="loadExerciseIntoForm('Standing Overhead Press', 'Shoulders', 50.0, 3, 8)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
                                 </div>
                             </div>
                         </div>
@@ -771,21 +770,21 @@
                                         <div class="font-bold text-white">Front Squat</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 6 reps • 85 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Front Squat', 'Legs', 85.0, 4, 6)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
+                                    <button type="button" onclick="loadExerciseIntoForm('Front Squat', 'Legs', 85.0, 4, 6)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
                                 </div>
                                 <div class="p-2.5 rounded-lg bg-black/30 border border-white/5 flex items-center justify-between">
                                     <div>
                                         <div class="font-bold text-white">Romanian Deadlift (RDL)</div>
                                         <div class="text-[10px] text-gray-400">4 sets &times; 8 reps • 85 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Romanian Deadlift (RDL)', 'Legs', 85.0, 4, 8)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
+                                    <button type="button" onclick="loadExerciseIntoForm('Romanian Deadlift (RDL)', 'Legs', 85.0, 4, 8)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
                                 </div>
                                 <div class="p-2.5 rounded-lg bg-black/30 border border-white/5 flex items-center justify-between">
                                     <div>
                                         <div class="font-bold text-white">Cable Rope Crunch</div>
                                         <div class="text-[10px] text-gray-400">3 sets &times; 20 reps • 30 kg</div>
                                     </div>
-                                    <button type="button" onclick="loadExerciseIntoForm('Cable Rope Crunch', 'Core', 30.0, 3, 20)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
+                                    <button type="button" onclick="loadExerciseIntoForm('Cable Rope Crunch', 'Core', 30.0, 3, 20)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
                                 </div>
                             </div>
                         </div>
@@ -810,35 +809,35 @@
                                 <div class="font-bold text-white">KB Goblet Squats</div>
                                 <div class="text-[10px] text-gray-400">4 sets &times; 15 reps • 24 kg</div>
                             </div>
-                            <button type="button" onclick="loadExerciseIntoForm('Kettlebell Goblet Squat', 'Legs', 24.0, 4, 15)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
+                            <button type="button" onclick="loadExerciseIntoForm('Kettlebell Goblet Squat', 'Legs', 24.0, 4, 15)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
                         </div>
                         <div class="p-3 rounded-xl bg-[#182030] border border-white/5 flex items-center justify-between text-xs">
                             <div>
                                 <div class="font-bold text-white">Explosive Push-Ups</div>
                                 <div class="text-[10px] text-gray-400">4 sets &times; 18 reps • Bodyweight</div>
                             </div>
-                            <button type="button" onclick="loadExerciseIntoForm('Explosive Push-Ups', 'Chest', 0.0, 4, 18)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
+                            <button type="button" onclick="loadExerciseIntoForm('Explosive Push-Ups', 'Chest', 0.0, 4, 18)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
                         </div>
                         <div class="p-3 rounded-xl bg-[#182030] border border-white/5 flex items-center justify-between text-xs">
                             <div>
                                 <div class="font-bold text-white">Dumbbell Renegade Row</div>
                                 <div class="text-[10px] text-gray-400">3 sets &times; 12 reps • 16 kg</div>
                             </div>
-                            <button type="button" onclick="loadExerciseIntoForm('Dumbbell Renegade Row', 'Back', 16.0, 3, 12)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
+                            <button type="button" onclick="loadExerciseIntoForm('Dumbbell Renegade Row', 'Back', 16.0, 3, 12)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
                         </div>
                         <div class="p-3 rounded-xl bg-[#182030] border border-white/5 flex items-center justify-between text-xs">
                             <div>
                                 <div class="font-bold text-white">DB Squat to Press</div>
                                 <div class="text-[10px] text-gray-400">3 sets &times; 12 reps • 14 kg</div>
                             </div>
-                            <button type="button" onclick="loadExerciseIntoForm('DB Squat to Press', 'Shoulders', 14.0, 3, 12)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
+                            <button type="button" onclick="loadExerciseIntoForm('DB Squat to Press', 'Shoulders', 14.0, 3, 12)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
                         </div>
                         <div class="p-3 rounded-xl bg-[#182030] border border-white/5 flex items-center justify-between text-xs">
                             <div>
                                 <div class="font-bold text-white">Weighted Plank Hold</div>
                                 <div class="text-[10px] text-gray-400">3 sets &times; 60s • 15 kg</div>
                             </div>
-                            <button type="button" onclick="loadExerciseIntoForm('Weighted Plank Hold', 'Core', 15.0, 3, 60)" class="px-2.5 py-1 rounded bg-[#e2ff38] hover:bg-[#d0ee27] text-black text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
+                            <button type="button" onclick="loadExerciseIntoForm('Weighted Plank Hold', 'Core', 15.0, 3, 60)" class="px-2.5 py-1 rounded btn-glow-orange text-white text-[10px] font-black uppercase transition-all shadow-sm cursor-pointer">⚡ Load</button>
                         </div>
                     </div>
                 </div>
@@ -850,12 +849,12 @@
             <div class="flex items-center justify-between flex-wrap gap-2">
                 <div>
                     <h2 class="font-heading text-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                        <i class="fa-solid fa-dumbbell text-[#e2ff38]"></i>
+                        <i class="fa-solid fa-dumbbell text-[#ff9e58]"></i>
                         <span>Daily Workout & Set Tracker</span>
                     </h2>
                     <p class="text-xs text-gray-400">Log muscle groups, sets, reps and progressive overload weights.</p>
                 </div>
-                <span class="text-xs text-[#e2ff38] font-bold bg-[#e2ff38]/10 px-3 py-1 rounded-full border border-[#e2ff38]/20 flex items-center gap-1.5">
+                <span class="text-xs text-[#ff9e58] font-bold bg-[#ff5e14]/15 px-3 py-1 rounded-full border border-[#ff5e14]/20 flex items-center gap-1.5">
                     <i class="fa-solid fa-fire text-[#ff5e36]"></i>
                     <span>{{ count($workoutLogs) }} Sessions Logged</span>
                 </span>
@@ -864,7 +863,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Log Workout Form (1 Col) -->
                 <div id="workout-logger-form-card" class="bg-[#131722] border border-white/10 rounded-2xl p-6 sm:p-7 shadow-xl transition-all">
-                    <h3 class="font-heading text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-[#e2ff38] pl-2.5">
+                    <h3 class="font-heading text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-[#ff5e14] pl-2.5">
                         Log Today's Exercise
                     </h3>
 
@@ -893,7 +892,7 @@
                                     <button 
                                         type="button" 
                                         onclick="selectMuscleGroup('{{ $mg['name'] }}')"
-                                        class="muscle-pill py-2 px-1 text-center rounded-lg text-[10px] font-bold uppercase border transition-all cursor-pointer {{ $loop->first ? 'bg-[#e2ff38] text-black border-[#e2ff38]' : 'bg-[#182030] text-gray-300 border-white/5 hover:border-white/20' }}"
+                                        class="muscle-pill py-2 px-1 text-center rounded-lg text-[10px] font-bold uppercase border transition-all cursor-pointer {{ $loop->first ? 'bg-[#ff5e14] text-black border-[#ff5e14]' : 'bg-[#182030] text-gray-300 border-white/5 hover:border-white/20' }}"
                                         data-group="{{ $mg['name'] }}"
                                     >
                                         <i class="fa-solid {{ $mg['icon'] }} block text-xs mb-0.5"></i>
@@ -914,7 +913,7 @@
                                 id="workout_exercise_name" 
                                 placeholder="e.g. Incline Dumbbell Press" 
                                 required
-                                class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                                class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                             >
                             <!-- Quick Chips -->
                             <div class="flex flex-wrap gap-1 mt-1.5">
@@ -938,7 +937,7 @@
                                     id="workout_weight" 
                                     value="80.0" 
                                     required
-                                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                                 >
                             </div>
                             <div>
@@ -952,7 +951,7 @@
                                     value="4" 
                                     min="1" 
                                     required
-                                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                                 >
                             </div>
                             <div>
@@ -966,7 +965,7 @@
                                     value="10" 
                                     min="1" 
                                     required
-                                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                                 >
                             </div>
                         </div>
@@ -981,13 +980,13 @@
                                 name="notes" 
                                 id="workout_notes" 
                                 placeholder="RPE 8.5 • Felt explosive, good lockout"
-                                class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                                class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                             >
                         </div>
 
                         <button 
                             type="submit" 
-                            class="w-full py-2.5 rounded-xl bg-[#e2ff38] hover:bg-[#d0ee27] text-black font-extrabold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md shadow-[#e2ff38]/20 flex items-center justify-center gap-1.5"
+                            class="w-full py-2.5 rounded-xl btn-glow-orange text-white font-extrabold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md shadow-[#ff5e14]/30 flex items-center justify-center gap-1.5"
                         >
                             <i class="fa-solid fa-plus text-xs"></i>
                             <span>Log Workout Set</span>
@@ -999,7 +998,7 @@
                 <div class="lg:col-span-2 bg-[#131722] border border-white/10 rounded-2xl p-6 sm:p-7 shadow-xl flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-heading text-sm font-bold text-white uppercase tracking-wider border-l-2 border-[#e2ff38] pl-2.5">
+                            <h3 class="font-heading text-sm font-bold text-white uppercase tracking-wider border-l-2 border-[#ff5e14] pl-2.5">
                                 Recent Completed Workouts & Sets
                             </h3>
                             <span class="text-[10px] font-mono text-gray-400">LAST 15 ENTRIES</span>
@@ -1021,7 +1020,7 @@
                                     @forelse ($workoutLogs as $log)
                                         <tr class="hover:bg-white/5 transition-colors">
                                             <td class="py-3 px-3">
-                                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase bg-white/5 border border-white/10 text-[#e2ff38]">
+                                                <span class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase bg-white/5 border border-white/10 text-[#ff9e58]">
                                                     {{ $log->muscle_group }}
                                                 </span>
                                             </td>
@@ -1032,7 +1031,7 @@
                                             <td class="py-3 px-3 font-mono text-white">
                                                 {{ $log->sets }} &times; {{ $log->reps }}
                                             </td>
-                                            <td class="py-3 px-3 font-heading font-black text-[#e2ff38]">
+                                            <td class="py-3 px-3 font-heading font-black text-[#ff9e58]">
                                                 {{ $log->weight_kg }} kg
                                             </td>
                                             <td class="py-3 px-3 text-gray-400 text-[11px] max-w-[150px] truncate" title="{{ $log->notes }}">
@@ -1068,7 +1067,7 @@
             <div class="flex items-center justify-between flex-wrap gap-2">
                 <div>
                     <h2 class="font-heading text-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                        <i class="fa-solid fa-chart-line text-[#e2ff38]"></i>
+                        <i class="fa-solid fa-chart-line text-[#ff9e58]"></i>
                         <span>Athlete Transformation & Body Progress</span>
                     </h2>
                     <p class="text-xs text-gray-400">8-Week body composition trajectory, weight decline, and physical evolution.</p>
@@ -1076,7 +1075,7 @@
                 <button 
                     type="button" 
                     onclick="openWeighInModal()"
-                    class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-[#e2ff38] text-white hover:text-black border border-white/10 hover:border-[#e2ff38] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
+                    class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-[#ff5e14] text-white hover:text-black border border-white/10 hover:border-[#ff5e14] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 shadow-sm"
                 >
                     <i class="fa-solid fa-weight-scale text-xs"></i>
                     <span>Log New Weigh-In</span>
@@ -1089,7 +1088,7 @@
                     <div class="flex flex-wrap items-center justify-between gap-3">
                         <div class="flex items-center gap-4">
                             <div class="flex items-center gap-1.5 text-xs">
-                                <span class="w-3 h-3 rounded-full bg-[#e2ff38]"></span>
+                                <span class="w-3 h-3 rounded-full bg-[#ff5e14]"></span>
                                 <span class="text-gray-300 font-bold">Weight (kg)</span>
                             </div>
                             <div class="flex items-center gap-1.5 text-xs">
@@ -1115,7 +1114,7 @@
                         </div>
                         <div class="p-2.5 rounded-xl bg-[#182030] border border-white/5">
                             <span class="text-[9px] text-gray-400 uppercase font-bold block">Current (Wk 8)</span>
-                            <span class="font-heading text-sm font-black text-[#e2ff38]">{{ $profile['weight'] }} <span class="text-[10px] text-cyan-400 font-normal">(14.8%)</span></span>
+                            <span class="font-heading text-sm font-black text-[#ff9e58]">{{ $profile['weight'] }} <span class="text-[10px] text-cyan-400 font-normal">(14.8%)</span></span>
                         </div>
                         <div class="p-2.5 rounded-xl bg-[#182030] border border-white/5">
                             <span class="text-[9px] text-gray-400 uppercase font-bold block">Waistline Cut</span>
@@ -1129,10 +1128,10 @@
                 </div>
 
                 <!-- Before vs After Transformation Card (1 Col) -->
-                <div class="bg-gradient-to-b from-[#161c28] to-[#10141e] border-2 border-[#e2ff38]/30 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                <div class="bg-gradient-to-b from-[#161c28] to-[#10141e] border-2 border-[#ff5e14]/30 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-3">
-                            <span class="text-[10px] font-black uppercase tracking-widest text-[#e2ff38] bg-[#e2ff38]/10 px-2.5 py-0.5 rounded-full border border-[#e2ff38]/20">
+                            <span class="text-[10px] font-black uppercase tracking-widest text-[#ff9e58] bg-[#ff5e14]/15 px-2.5 py-0.5 rounded-full border border-[#ff5e14]/20">
                                 8-WEEK RECOMPOSITION
                             </span>
                             <span class="text-xs font-bold text-emerald-400">Phase 2</span>
@@ -1158,12 +1157,12 @@
                             </div>
 
                             <!-- After -->
-                            <div class="bg-[#182030] p-2.5 rounded-xl border border-[#e2ff38]/40 text-center space-y-1.5 relative">
-                                <span class="text-[9px] font-bold uppercase tracking-wider text-[#e2ff38] block">CURRENT (WK 8)</span>
-                                <div class="h-32 rounded-lg bg-gradient-to-t from-emerald-950 via-[#16202e] to-[#1e2a3a] border border-[#e2ff38]/30 flex flex-col items-center justify-center p-2 relative overflow-hidden">
-                                    <i class="fa-solid fa-person text-4xl text-[#e2ff38]"></i>
-                                    <span class="text-[9px] text-[#e2ff38] font-mono mt-1 font-black">78.5 kg &bull; 14.8%</span>
-                                    <span class="absolute top-1 right-1 text-[8px] bg-[#e2ff38] text-black font-extrabold px-1 rounded">HOT</span>
+                            <div class="bg-[#182030] p-2.5 rounded-xl border border-[#ff5e14]/40 text-center space-y-1.5 relative">
+                                <span class="text-[9px] font-bold uppercase tracking-wider text-[#ff9e58] block">CURRENT (WK 8)</span>
+                                <div class="h-32 rounded-lg bg-gradient-to-t from-emerald-950 via-[#16202e] to-[#1e2a3a] border border-[#ff5e14]/30 flex flex-col items-center justify-center p-2 relative overflow-hidden">
+                                    <i class="fa-solid fa-person text-4xl text-[#ff9e58]"></i>
+                                    <span class="text-[9px] text-[#ff9e58] font-mono mt-1 font-black">78.5 kg &bull; 14.8%</span>
+                                    <span class="absolute top-1 right-1 text-[8px] bg-[#ff5e14] text-black font-extrabold px-1 rounded">HOT</span>
                                 </div>
                                 <span class="text-[10px] text-emerald-400 block font-bold">V-Taper Defined</span>
                             </div>
@@ -1172,15 +1171,15 @@
                         <!-- Milestones -->
                         <div class="space-y-1.5 text-[11px] text-gray-300">
                             <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-[#e2ff38]"></i>
+                                <i class="fa-solid fa-circle-check text-[#ff9e58]"></i>
                                 <span>Abdominal separation clearly visible</span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-[#e2ff38]"></i>
+                                <i class="fa-solid fa-circle-check text-[#ff9e58]"></i>
                                 <span>Full bench & squat strength maintained</span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <i class="fa-solid fa-circle-check text-[#e2ff38]"></i>
+                                <i class="fa-solid fa-circle-check text-[#ff9e58]"></i>
                                 <span>Resting metabolic output elevated</span>
                             </div>
                         </div>
@@ -1189,7 +1188,7 @@
                     <button 
                         type="button" 
                         onclick="openWeighInModal()"
-                        class="w-full mt-5 py-2.5 rounded-xl bg-white/5 hover:bg-[#e2ff38] text-white hover:text-black border border-white/10 hover:border-[#e2ff38] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer text-center"
+                        class="w-full mt-5 py-2.5 rounded-xl bg-white/5 hover:bg-[#ff5e14] text-white hover:text-black border border-white/10 hover:border-[#ff5e14] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer text-center"
                     >
                         Update Measurements
                     </button>
@@ -1205,7 +1204,7 @@
             <div class="flex items-center justify-between flex-wrap gap-2">
                 <div>
                     <h2 class="font-heading text-lg font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                        <i class="fa-solid fa-receipt text-[#e2ff38]"></i>
+                        <i class="fa-solid fa-receipt text-[#ff9e58]"></i>
                         <span>Past Billing Records & Payment History</span>
                     </h2>
                     <p class="text-xs text-gray-400">All transaction history, past monthly dues, and downloadable gym receipts.</p>
@@ -1246,7 +1245,7 @@
                                         {{ $invoice['plan'] }}
                                     </td>
                                     <!-- Amount -->
-                                    <td class="py-3.5 px-5 font-heading text-sm font-bold text-[#e2ff38]">
+                                    <td class="py-3.5 px-5 font-heading text-sm font-bold text-[#ff9e58]">
                                         {{ $invoice['amount'] }}
                                     </td>
                                     <!-- Method -->
@@ -1276,7 +1275,7 @@
                                             <a 
                                                 href="{{ route('profile.invoice', $invoice['id']) }}" 
                                                 target="_blank"
-                                                class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#e2ff38]/10 hover:bg-[#e2ff38] text-[#e2ff38] hover:text-black text-[11px] font-bold border border-[#e2ff38]/30 transition-all cursor-pointer"
+                                                class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#ff5e14]/15 hover:bg-[#ff5e14] text-[#ff9e58] hover:text-black text-[11px] font-bold border border-[#ff5e14]/30 transition-all cursor-pointer"
                                                 title="Open Full Page Official Tax Invoice (A4)"
                                             >
                                                 <i class="fa-solid fa-print"></i>
@@ -1301,7 +1300,7 @@
                 <!-- Table Footer Summary -->
                 <div class="p-4 bg-[#182030]/60 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
                     <span>Showing all {{ count($invoices) }} past invoices &bull; All membership payments are current & verified</span>
-                    <a href="{{ route('profile.invoice', 'INV-2026-1002') }}" target="_blank" class="text-[#e2ff38] hover:underline font-bold flex items-center gap-1.5 cursor-pointer">
+                    <a href="{{ route('profile.invoice', 'INV-2026-1002') }}" target="_blank" class="text-[#ff9e58] hover:underline font-bold flex items-center gap-1.5 cursor-pointer">
                         <i class="fa-solid fa-file-invoice-dollar"></i>
                         <span>Print Latest Official Tax Invoice</span>
                     </a>
@@ -1320,7 +1319,7 @@
         </button>
 
         <div class="mb-6">
-            <span class="text-[10px] font-bold text-[#e2ff38] uppercase tracking-wider">FITNES Athlete Portal</span>
+            <span class="text-[10px] font-bold text-[#ff9e58] uppercase tracking-wider">Gymstick Athlete Portal</span>
             <h3 class="font-heading text-xl font-bold text-white mt-1">Update Athlete Information</h3>
             <p class="text-xs text-gray-400">Keep your biometric details, contact numbers, and emergency profile verified.</p>
         </div>
@@ -1339,7 +1338,7 @@
                     id="edit-name" 
                     value="{{ old('name', $profile['name']) }}" 
                     required 
-                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                 >
             </div>
 
@@ -1351,7 +1350,7 @@
                 <div class="flex gap-2">
                     <select 
                         name="phone_country_code" 
-                        class="bg-[#182030] border border-white/10 rounded-lg px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38] shrink-0"
+                        class="bg-[#182030] border border-white/10 rounded-lg px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14] shrink-0"
                     >
                         <option value="+880">🇧🇩 BD (+880)</option>
                         <option value="+1" selected>🇺🇸 US/CA (+1)</option>
@@ -1368,7 +1367,7 @@
                         id="edit-phone-number" 
                         value="{{ old('phone_number', preg_replace('/^\+\d+\s*/', '', $profile['phone'])) }}" 
                         placeholder="(555) 389-4210 or 1712-345678"
-                        class="flex-1 bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                        class="flex-1 bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                     >
                 </div>
             </div>
@@ -1382,7 +1381,7 @@
                     <select 
                         name="blood_group" 
                         id="edit-blood-group"
-                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                     >
                         <option value="O+" {{ old('blood_group', $profile['blood_group']) === 'O+' ? 'selected' : '' }}>O Positive (O+)</option>
                         <option value="O-" {{ old('blood_group', $profile['blood_group']) === 'O-' ? 'selected' : '' }}>O Negative (O-)</option>
@@ -1406,7 +1405,7 @@
                             id="edit-weight-val" 
                             value="{{ old('weight_val', preg_replace('/[^0-9.]/', '', $profile['weight']) ?: '78.5') }}" 
                             placeholder="78.5"
-                            class="w-full bg-[#182030] border border-white/10 rounded-lg pl-3.5 pr-10 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                            class="w-full bg-[#182030] border border-white/10 rounded-lg pl-3.5 pr-10 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                         >
                         <span class="absolute right-3 top-2.5 text-xs font-bold text-gray-400">kg</span>
                     </div>
@@ -1425,7 +1424,7 @@
                         id="edit-height-val" 
                         value="{{ old('height_val', $profile['height']) }}" 
                         placeholder="5' 11\" (180 cm)"
-                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                     >
                 </div>
 
@@ -1439,14 +1438,14 @@
                         id="edit-goal" 
                         value="{{ old('fitness_goal', $profile['fitness_goal']) }}" 
                         placeholder="Hypertrophy & Strength Recomposition"
-                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                     >
                 </div>
             </div>
 
             <!-- Emergency Contact Structured Section -->
             <div class="p-4 rounded-xl bg-[#182030] border border-white/10 space-y-3">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-[#e2ff38] flex items-center gap-1.5">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#ff9e58] flex items-center gap-1.5">
                     <i class="fa-solid fa-heart-pulse text-rose-500"></i>
                     <span>Emergency Contact & Relationship</span>
                 </span>
@@ -1461,7 +1460,7 @@
                             name="emergency_name" 
                             value="Sarah Ahmad"
                             placeholder="Full Name"
-                            class="w-full bg-[#131722] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                            class="w-full bg-[#131722] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                         >
                     </div>
 
@@ -1471,7 +1470,7 @@
                         </label>
                         <select 
                             name="emergency_relation" 
-                            class="w-full bg-[#131722] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                            class="w-full bg-[#131722] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                         >
                             <option value="Spouse" selected>Spouse / Partner</option>
                             <option value="Parent">Parent (Father / Mother)</option>
@@ -1491,7 +1490,7 @@
                     <div class="flex gap-2">
                         <select 
                             name="emergency_country_code" 
-                            class="bg-[#131722] border border-white/10 rounded-lg px-2.5 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38] shrink-0"
+                            class="bg-[#131722] border border-white/10 rounded-lg px-2.5 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14] shrink-0"
                         >
                             <option value="+1" selected>🇺🇸 +1</option>
                             <option value="+880">🇧🇩 +880</option>
@@ -1505,7 +1504,7 @@
                             name="emergency_phone" 
                             value="555-891-2234"
                             placeholder="(555) 891-2234 or 1712-XXXXXX"
-                            class="flex-1 bg-[#131722] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                            class="flex-1 bg-[#131722] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                         >
                     </div>
                 </div>
@@ -1522,7 +1521,7 @@
                 </button>
                 <button 
                     type="submit" 
-                    class="bg-[#e2ff38] hover:bg-[#d0ee27] text-black font-extrabold text-xs uppercase tracking-wider px-6 py-2.5 rounded-lg transition-all cursor-pointer shadow-md shadow-[#e2ff38]/20"
+                    class="btn-glow-orange text-white font-extrabold text-xs uppercase tracking-wider px-6 py-2.5 rounded-lg transition-all cursor-pointer shadow-md shadow-[#ff5e14]/30"
                 >
                     Save Changes
                 </button>
@@ -1541,7 +1540,7 @@
         </button>
 
         <div class="mb-6">
-            <span class="text-[10px] font-extrabold text-[#e2ff38] uppercase tracking-widest bg-[#e2ff38]/10 px-3 py-1 rounded-full border border-[#e2ff38]/30 inline-block mb-2">
+            <span class="text-[10px] font-extrabold text-[#ff9e58] uppercase tracking-widest bg-[#ff5e14]/15 px-3 py-1 rounded-full border border-[#ff5e14]/30 inline-block mb-2">
                 MEMBERSHIP PASS RENEWAL
             </span>
             <h3 class="font-heading text-2xl sm:text-3xl font-extrabold text-white">
@@ -1561,7 +1560,7 @@
                     <span class="text-gray-400 text-[10px] uppercase font-bold block">Current Plan</span>
                     <strong class="text-white text-sm">{{ $profile['package_name'] }}</strong>
                     <div class="text-gray-400 text-[11px] mt-0.5">
-                        Current Expiry: <strong class="text-[#e2ff38]">{{ $profile['renewal_date'] }}</strong>
+                        Current Expiry: <strong class="text-[#ff9e58]">{{ $profile['renewal_date'] }}</strong>
                     </div>
                 </div>
                 <div class="text-right">
@@ -1579,42 +1578,42 @@
                 </label>
                 <div class="grid grid-cols-2 gap-2.5">
                     <!-- 1 Month -->
-                    <label class="p-3 rounded-xl bg-[#182030] border border-white/10 hover:border-[#e2ff38] transition-colors cursor-pointer flex flex-col justify-between group">
+                    <label class="p-3 rounded-xl bg-[#182030] border border-white/10 hover:border-[#ff5e14] transition-colors cursor-pointer flex flex-col justify-between group">
                         <div class="flex items-center justify-between mb-1">
-                            <input type="radio" name="duration_months" value="1" checked class="accent-[#e2ff38]" onchange="updateRenewCalculation(1)">
+                            <input type="radio" name="duration_months" value="1" checked class="accent-[#ff5e14]" onchange="updateRenewCalculation(1)">
                             <span class="text-[9px] font-bold uppercase tracking-wider text-gray-400">Monthly</span>
                         </div>
-                        <div class="font-heading text-lg font-bold text-white group-hover:text-[#e2ff38] transition-colors">+1 Month</div>
+                        <div class="font-heading text-lg font-bold text-white group-hover:text-[#ff9e58] transition-colors">+1 Month</div>
                         <div class="text-[11px] text-gray-400 mt-0.5 renew-price-1">$53.00</div>
                     </label>
 
                     <!-- 3 Months -->
-                    <label class="p-3 rounded-xl bg-[#182030] border border-white/10 hover:border-[#e2ff38] transition-colors cursor-pointer flex flex-col justify-between group">
+                    <label class="p-3 rounded-xl bg-[#182030] border border-white/10 hover:border-[#ff5e14] transition-colors cursor-pointer flex flex-col justify-between group">
                         <div class="flex items-center justify-between mb-1">
-                            <input type="radio" name="duration_months" value="3" class="accent-[#e2ff38]" onchange="updateRenewCalculation(3)">
+                            <input type="radio" name="duration_months" value="3" class="accent-[#ff5e14]" onchange="updateRenewCalculation(3)">
                             <span class="text-[9px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">Save 10%</span>
                         </div>
-                        <div class="font-heading text-lg font-bold text-white group-hover:text-[#e2ff38] transition-colors">+3 Months</div>
+                        <div class="font-heading text-lg font-bold text-white group-hover:text-[#ff9e58] transition-colors">+3 Months</div>
                         <div class="text-[11px] text-gray-400 mt-0.5 renew-price-3">$143.10</div>
                     </label>
 
                     <!-- 6 Months -->
-                    <label class="p-3 rounded-xl bg-[#182030] border border-white/10 hover:border-[#e2ff38] transition-colors cursor-pointer flex flex-col justify-between group">
+                    <label class="p-3 rounded-xl bg-[#182030] border border-white/10 hover:border-[#ff5e14] transition-colors cursor-pointer flex flex-col justify-between group">
                         <div class="flex items-center justify-between mb-1">
-                            <input type="radio" name="duration_months" value="6" class="accent-[#e2ff38]" onchange="updateRenewCalculation(6)">
+                            <input type="radio" name="duration_months" value="6" class="accent-[#ff5e14]" onchange="updateRenewCalculation(6)">
                             <span class="text-[9px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">Save 15%</span>
                         </div>
-                        <div class="font-heading text-lg font-bold text-white group-hover:text-[#e2ff38] transition-colors">+6 Months</div>
+                        <div class="font-heading text-lg font-bold text-white group-hover:text-[#ff9e58] transition-colors">+6 Months</div>
                         <div class="text-[11px] text-gray-400 mt-0.5 renew-price-6">$270.30</div>
                     </label>
 
                     <!-- 12 Months -->
-                    <label class="p-3 rounded-xl bg-[#182030] border-2 border-[#e2ff38]/50 hover:border-[#e2ff38] transition-colors cursor-pointer flex flex-col justify-between group bg-[#e2ff38]/5">
+                    <label class="p-3 rounded-xl bg-[#182030] border-2 border-[#ff5e14]/50 hover:border-[#ff5e14] transition-colors cursor-pointer flex flex-col justify-between group bg-[#ff5e14]/5">
                         <div class="flex items-center justify-between mb-1">
-                            <input type="radio" name="duration_months" value="12" class="accent-[#e2ff38]" onchange="updateRenewCalculation(12)">
-                            <span class="text-[9px] font-black uppercase tracking-wider text-black bg-[#e2ff38] px-1.5 py-0.5 rounded">Best Value 23%</span>
+                            <input type="radio" name="duration_months" value="12" class="accent-[#ff5e14]" onchange="updateRenewCalculation(12)">
+                            <span class="text-[9px] font-black uppercase tracking-wider text-black bg-[#ff5e14] px-1.5 py-0.5 rounded">Best Value 23%</span>
                         </div>
-                        <div class="font-heading text-lg font-bold text-[#e2ff38]">+12 Months (1 Year)</div>
+                        <div class="font-heading text-lg font-bold text-[#ff9e58]">+12 Months (1 Year)</div>
                         <div class="text-[11px] text-gray-300 mt-0.5 renew-price-12">$490.00</div>
                     </label>
                 </div>
@@ -1628,11 +1627,11 @@
                 </div>
                 <div class="flex justify-between items-center text-gray-400">
                     <span>Duration Added:</span>
-                    <span id="renew-preview-duration" class="font-bold text-[#e2ff38]">+1 Month (+30 Days)</span>
+                    <span id="renew-preview-duration" class="font-bold text-[#ff9e58]">+1 Month (+30 Days)</span>
                 </div>
                 <div class="flex justify-between items-center pt-2 border-t border-white/10 text-white font-bold">
                     <span>Total Payable:</span>
-                    <span id="renew-preview-price" class="font-heading text-xl text-[#e2ff38] font-black">$53.00</span>
+                    <span id="renew-preview-price" class="font-heading text-xl text-[#ff9e58] font-black">$53.00</span>
                 </div>
             </div>
 
@@ -1642,9 +1641,9 @@
                     Payment Method
                 </label>
                 <div class="space-y-2">
-                    <label class="flex items-center justify-between p-3 rounded-xl bg-[#182030] border border-white/10 hover:border-[#e2ff38] transition-colors cursor-pointer">
+                    <label class="flex items-center justify-between p-3 rounded-xl bg-[#182030] border border-white/10 hover:border-[#ff5e14] transition-colors cursor-pointer">
                         <div class="flex items-center gap-2.5 text-xs text-white">
-                            <input type="radio" name="payment_method" value="Visa •••• 4242" checked class="accent-[#e2ff38]">
+                            <input type="radio" name="payment_method" value="Visa •••• 4242" checked class="accent-[#ff5e14]">
                             <i class="fa-brands fa-cc-visa text-blue-400 text-base"></i>
                             <span>Visa Card (ending •••• 4242)</span>
                         </div>
@@ -1660,9 +1659,9 @@
                         <span class="text-[10px] text-[#e2136e] font-bold">Instant Gateway</span>
                     </label>
 
-                    <label class="flex items-center justify-between p-3 rounded-xl bg-[#182030] border border-white/10 hover:border-[#e2ff38] transition-colors cursor-pointer">
+                    <label class="flex items-center justify-between p-3 rounded-xl bg-[#182030] border border-white/10 hover:border-[#ff5e14] transition-colors cursor-pointer">
                         <div class="flex items-center gap-2.5 text-xs text-white">
-                            <input type="radio" name="payment_method" value="Front Desk Cash" class="accent-[#e2ff38]">
+                            <input type="radio" name="payment_method" value="Front Desk Cash" class="accent-[#ff5e14]">
                             <i class="fa-solid fa-money-bill-wave text-emerald-400"></i>
                             <span>Pay Cash at Gym Reception</span>
                         </div>
@@ -1682,7 +1681,7 @@
                 </button>
                 <button 
                     type="submit" 
-                    class="flex-1 py-3 px-4 rounded-xl bg-[#e2ff38] hover:bg-[#d0ee27] text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg shadow-[#e2ff38]/20 flex items-center justify-center gap-2"
+                    class="flex-1 py-3 px-4 rounded-xl btn-glow-orange text-white font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg shadow-[#ff5e14]/30 flex items-center justify-center gap-2"
                 >
                     <i class="fa-solid fa-bolt"></i>
                     <span>Confirm & Renew</span>
@@ -1700,7 +1699,7 @@
         </button>
 
         <div class="mb-6">
-            <span class="text-[10px] font-bold text-[#e2ff38] uppercase tracking-wider">FITNES Membership Services</span>
+            <span class="text-[10px] font-bold text-[#ff9e58] uppercase tracking-wider">Gymstick Membership Services</span>
             <h3 class="font-heading text-xl font-bold text-white mt-1">Pause / Freeze Membership</h3>
             <p class="text-xs text-gray-400">Going on vacation or recovering from injury? Pause your membership and preserve all remaining paid days.</p>
         </div>
@@ -1716,7 +1715,7 @@
                 </div>
                 <div class="text-right">
                     <span class="text-gray-400 text-[10px] uppercase font-bold block">Active Plan</span>
-                    <strong class="text-[#e2ff38]">{{ $profile['package_name'] }}</strong>
+                    <strong class="text-[#ff9e58]">{{ $profile['package_name'] }}</strong>
                 </div>
             </div>
 
@@ -1732,7 +1731,7 @@
                     value="{{ date('Y-m-d', strtotime('+1 day')) }}"
                     min="{{ date('Y-m-d') }}"
                     required 
-                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                 >
             </div>
 
@@ -1742,26 +1741,26 @@
                     Freeze Duration
                 </label>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                    <label class="p-2.5 rounded-lg bg-[#182030] border border-white/10 text-center cursor-pointer hover:border-[#e2ff38] transition-colors block">
-                        <input type="radio" name="freeze_duration_days" value="7" class="accent-[#e2ff38] mb-1">
+                    <label class="p-2.5 rounded-lg bg-[#182030] border border-white/10 text-center cursor-pointer hover:border-[#ff5e14] transition-colors block">
+                        <input type="radio" name="freeze_duration_days" value="7" class="accent-[#ff5e14] mb-1">
                         <div class="text-xs font-bold text-white">7 Days</div>
                         <div class="text-[9px] text-gray-400">1 Week</div>
                     </label>
 
-                    <label class="p-2.5 rounded-lg bg-[#182030] border border-[#e2ff38]/40 text-center cursor-pointer hover:border-[#e2ff38] transition-colors block">
-                        <input type="radio" name="freeze_duration_days" value="14" checked class="accent-[#e2ff38] mb-1">
+                    <label class="p-2.5 rounded-lg bg-[#182030] border border-[#ff5e14]/40 text-center cursor-pointer hover:border-[#ff5e14] transition-colors block">
+                        <input type="radio" name="freeze_duration_days" value="14" checked class="accent-[#ff5e14] mb-1">
                         <div class="text-xs font-bold text-white">14 Days</div>
                         <div class="text-[9px] text-gray-400">2 Weeks</div>
                     </label>
 
-                    <label class="p-2.5 rounded-lg bg-[#182030] border border-white/10 text-center cursor-pointer hover:border-[#e2ff38] transition-colors block">
-                        <input type="radio" name="freeze_duration_days" value="30" class="accent-[#e2ff38] mb-1">
+                    <label class="p-2.5 rounded-lg bg-[#182030] border border-white/10 text-center cursor-pointer hover:border-[#ff5e14] transition-colors block">
+                        <input type="radio" name="freeze_duration_days" value="30" class="accent-[#ff5e14] mb-1">
                         <div class="text-xs font-bold text-white">30 Days</div>
                         <div class="text-[9px] text-gray-400">1 Month</div>
                     </label>
 
-                    <label class="p-2.5 rounded-lg bg-[#182030] border border-white/10 text-center cursor-pointer hover:border-[#e2ff38] transition-colors block">
-                        <input type="radio" name="freeze_duration_days" value="60" class="accent-[#e2ff38] mb-1">
+                    <label class="p-2.5 rounded-lg bg-[#182030] border border-white/10 text-center cursor-pointer hover:border-[#ff5e14] transition-colors block">
+                        <input type="radio" name="freeze_duration_days" value="60" class="accent-[#ff5e14] mb-1">
                         <div class="text-xs font-bold text-white">60 Days</div>
                         <div class="text-[9px] text-gray-400">2 Months</div>
                     </label>
@@ -1777,7 +1776,7 @@
                     name="freeze_reason" 
                     id="freeze_reason" 
                     required 
-                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                 >
                     <option value="Medical Recovery / Injury">Medical Recovery / Injury</option>
                     <option value="Work Travel / Relocation">Work Travel / Relocation</option>
@@ -1798,13 +1797,13 @@
                     id="freeze_notes" 
                     rows="2"
                     placeholder="e.g. Advised 2 weeks knee recovery by physician..."
-                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3.5 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                 ></textarea>
             </div>
 
             <!-- Policy Alert -->
             <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-[11px] text-gray-400 flex items-center gap-2">
-                <i class="fa-solid fa-clock-rotate-left text-[#e2ff38]"></i>
+                <i class="fa-solid fa-clock-rotate-left text-[#ff9e58]"></i>
                 <span>Your remaining paid days will be automatically added to your next billing date. Zero cancellation penalty.</span>
             </div>
 
@@ -1819,7 +1818,7 @@
                 </button>
                 <button 
                     type="submit" 
-                    class="bg-[#e2ff38] hover:bg-[#d0ee27] text-black font-extrabold text-xs uppercase tracking-wider px-6 py-2.5 rounded-lg transition-all cursor-pointer shadow-md shadow-[#e2ff38]/20"
+                    class="btn-glow-orange text-white font-extrabold text-xs uppercase tracking-wider px-6 py-2.5 rounded-lg transition-all cursor-pointer shadow-md shadow-[#ff5e14]/30"
                 >
                     Submit Freeze Request
                 </button>
@@ -1840,11 +1839,11 @@
             <div class="flex items-center justify-between pb-5 border-b border-white/10">
                 <div class="flex items-center gap-2">
                     <div class="flex items-center gap-[2px] h-6">
-                        <span class="w-[3px] h-3 bg-[#e2ff38] rounded-full"></span>
-                        <span class="w-[4px] h-5 bg-[#e2ff38] rounded-full"></span>
-                        <span class="w-[4px] h-4 bg-[#e2ff38] rounded-full"></span>
+                        <span class="w-[3px] h-3 bg-[#ff5e14] rounded-full"></span>
+                        <span class="w-[4px] h-5 bg-[#ff5e14] rounded-full"></span>
+                        <span class="w-[4px] h-4 bg-[#ff5e14] rounded-full"></span>
                     </div>
-                    <span class="font-heading text-lg font-black text-white">FITNES TRAINING</span>
+                    <span class="font-heading text-lg font-black text-white">Gymstick TRAINING</span>
                 </div>
                 <div class="text-right">
                     <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block">PAYMENT RECEIPT</span>
@@ -1882,12 +1881,12 @@
                 </div>
                 <div class="flex justify-between items-center text-white font-heading text-base font-black pt-2 border-t border-white/10">
                     <span>TOTAL PAID</span>
-                    <span id="receipt-total" class="text-[#e2ff38]"></span>
+                    <span id="receipt-total" class="text-[#ff9e58]"></span>
                 </div>
             </div>
 
             <div class="pt-4 text-center text-[10px] text-gray-500">
-                Thank you for training with FITNES. Keep crushing your fitness goals!
+                Thank you for training with Gymstick. Keep crushing your fitness goals!
             </div>
         </div>
 
@@ -1913,7 +1912,7 @@
                 id="receipt-tax-invoice-link"
                 href="#" 
                 target="_blank"
-                class="bg-[#e2ff38] hover:bg-[#d0ee27] text-black font-extrabold text-xs uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 shadow-md shadow-[#e2ff38]/20"
+                class="btn-glow-orange text-white font-extrabold text-xs uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 shadow-md shadow-[#ff5e14]/30"
             >
                 <i class="fa-solid fa-print"></i>
                 <span>Open Tax Invoice</span>
@@ -1930,7 +1929,7 @@
         </button>
 
         <div class="mb-5">
-            <span class="text-[10px] font-bold text-[#e2ff38] uppercase tracking-wider">Transformation Tracker</span>
+            <span class="text-[10px] font-bold text-[#ff9e58] uppercase tracking-wider">Transformation Tracker</span>
             <h3 class="font-heading text-xl font-bold text-white mt-1">Log Weekly Weigh-In</h3>
             <p class="text-xs text-gray-400">Record your current scale weight and body measurements to update your progress curve.</p>
         </div>
@@ -1950,7 +1949,7 @@
                         id="weighin_weight" 
                         value="78.5" 
                         required
-                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                     >
                 </div>
 
@@ -1965,7 +1964,7 @@
                         id="weighin_fat" 
                         value="14.8" 
                         placeholder="14.8"
-                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                     >
                 </div>
             </div>
@@ -1981,7 +1980,7 @@
                         name="waist_cm" 
                         value="82.0" 
                         placeholder="82.0"
-                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-2.5 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-2.5 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                     >
                 </div>
                 <div>
@@ -1994,7 +1993,7 @@
                         name="chest_cm" 
                         value="104.5" 
                         placeholder="104.5"
-                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-2.5 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-2.5 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                     >
                 </div>
                 <div>
@@ -2007,7 +2006,7 @@
                         name="arms_cm" 
                         value="40.0" 
                         placeholder="40.0"
-                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-2.5 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                        class="w-full bg-[#182030] border border-white/10 rounded-lg px-2.5 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                     >
                 </div>
             </div>
@@ -2021,7 +2020,7 @@
                     name="notes" 
                     id="weighin_notes" 
                     placeholder="e.g. Fasted morning weigh-in, feeling leaner"
-                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#e2ff38]"
+                    class="w-full bg-[#182030] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ff5e14]"
                 >
             </div>
 
@@ -2035,7 +2034,7 @@
                 </button>
                 <button 
                     type="submit" 
-                    class="bg-[#e2ff38] hover:bg-[#d0ee27] text-black font-extrabold text-xs uppercase tracking-wider px-6 py-2.5 rounded-lg transition-all cursor-pointer shadow-md shadow-[#e2ff38]/20"
+                    class="btn-glow-orange text-white font-extrabold text-xs uppercase tracking-wider px-6 py-2.5 rounded-lg transition-all cursor-pointer shadow-md shadow-[#ff5e14]/30"
                 >
                     Record Weigh-In
                 </button>
@@ -2070,7 +2069,7 @@
             </div>
             <div class="flex justify-between text-gray-400">
                 <span>Access Gate:</span>
-                <strong class="text-[#e2ff38]">VIP Turnstile Gate A</strong>
+                <strong class="text-[#ff9e58]">VIP Turnstile Gate A</strong>
             </div>
             <div class="flex justify-between text-gray-400">
                 <span>Check-in Time:</span>
@@ -2085,7 +2084,7 @@
         <button 
             type="button" 
             onclick="closeTurnstileModal()"
-            class="w-full py-2.5 rounded-xl bg-[#e2ff38] hover:bg-[#d0ee27] text-black font-extrabold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md shadow-[#e2ff38]/20"
+            class="w-full py-2.5 rounded-xl btn-glow-orange text-white font-extrabold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-md shadow-[#ff5e14]/30"
         >
             Enter Training Zone
         </button>
@@ -2190,9 +2189,9 @@ function selectMuscleGroup(name) {
     document.querySelectorAll('.muscle-pill').forEach(pill => {
         if (pill.getAttribute('data-group') === name) {
             pill.classList.remove('bg-[#182030]', 'text-gray-300', 'border-white/5');
-            pill.classList.add('bg-[#e2ff38]', 'text-black', 'border-[#e2ff38]');
+            pill.classList.add('bg-[#ff5e14]', 'text-black', 'border-[#ff5e14]');
         } else {
-            pill.classList.remove('bg-[#e2ff38]', 'text-black', 'border-[#e2ff38]');
+            pill.classList.remove('bg-[#ff5e14]', 'text-black', 'border-[#ff5e14]');
             pill.classList.add('bg-[#182030]', 'text-gray-300', 'border-white/5');
         }
     });
@@ -2213,13 +2212,13 @@ function switchRoutineTab(tabId) {
     if (targetPanel) targetPanel.classList.remove('hidden');
 
     document.querySelectorAll('.routine-tab-btn').forEach(btn => {
-        btn.classList.remove('bg-[#e2ff38]', 'text-black');
+        btn.classList.remove('bg-[#ff5e14]', 'text-black');
         btn.classList.add('bg-[#182030]', 'text-gray-300', 'border', 'border-white/5');
     });
     const targetBtn = document.getElementById('tab-btn-' + tabId);
     if (targetBtn) {
         targetBtn.classList.remove('bg-[#182030]', 'text-gray-300', 'border', 'border-white/5');
-        targetBtn.classList.add('bg-[#e2ff38]', 'text-black');
+        targetBtn.classList.add('bg-[#ff5e14]', 'text-black');
     }
 }
 
@@ -2238,9 +2237,9 @@ function loadExerciseIntoForm(name, muscle, weight, sets, reps) {
     const formCard = document.getElementById('workout-logger-form-card');
     if (formCard) {
         formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        formCard.classList.add('ring-2', 'ring-[#e2ff38]', 'shadow-[#e2ff38]/20');
+        formCard.classList.add('ring-2', 'ring-[#ff5e14]', 'shadow-[#ff5e14]/30');
         setTimeout(() => {
-            formCard.classList.remove('ring-2', 'ring-[#e2ff38]', 'shadow-[#e2ff38]/20');
+            formCard.classList.remove('ring-2', 'ring-[#ff5e14]', 'shadow-[#ff5e14]/30');
         }, 1500);
     }
     if (nameInput) nameInput.focus();
@@ -2391,12 +2390,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     {
                         label: 'Body Weight (kg)',
                         data: weights.length ? weights : [84.0, 83.2, 82.5, 81.6, 80.8, 79.9, 79.1, 78.5],
-                        borderColor: '#e2ff38',
+                        borderColor: '#ff5e14',
                         backgroundColor: 'rgba(226, 255, 56, 0.08)',
                         borderWidth: 2.5,
                         tension: 0.35,
                         fill: true,
-                        pointBackgroundColor: '#e2ff38',
+                        pointBackgroundColor: '#ff5e14',
                         pointBorderColor: '#131722',
                         pointBorderWidth: 2,
                         pointRadius: 4,
@@ -2434,7 +2433,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         borderColor: 'rgba(255,255,255,0.15)',
                         borderWidth: 1,
                         titleColor: '#ffffff',
-                        bodyColor: '#e2ff38',
+                        bodyColor: '#ff5e14',
                         padding: 10,
                         callbacks: {
                             label: function(context) {
@@ -2455,7 +2454,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         max: 86,
                         grid: { color: 'rgba(255,255,255,0.05)' },
                         ticks: {
-                            color: '#e2ff38',
+                            color: '#ff5e14',
                             font: { size: 10 },
                             callback: (v) => v + ' kg'
                         }

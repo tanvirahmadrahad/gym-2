@@ -67,7 +67,7 @@ class FitnessStoreSeeder extends Seeder
                 'in_stock' => true,
             ],
             [
-                'name' => 'FITNES Oversized Athletic Acid-Wash Tee',
+                'name' => 'Gymstick Oversized Athletic Heavyweight Tee',
                 'category' => 'Apparel',
                 'price' => 34.00,
                 'discount_price' => 28.00,

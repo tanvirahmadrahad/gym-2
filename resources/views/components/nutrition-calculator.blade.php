@@ -1,23 +1,24 @@
-<div class="bg-[#131722] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+<div class="card-vibrant rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden select-none">
     <!-- Header -->
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10 mb-8">
         <div>
-            <span class="text-[10px] font-black uppercase tracking-widest text-[#e2ff38] bg-[#e2ff38]/10 px-3 py-1 rounded-full border border-[#e2ff38]/30 inline-block mb-1.5">
-                SCIENTIFIC MACRO ENGINE
+            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-glow text-[10px] font-bold uppercase tracking-wider mb-2">
+                <i class="fa-solid fa-calculator text-[#ff5e14]"></i>
+                <span>SCIENTIFIC MACRO ENGINE</span>
             </span>
             <h3 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
-                Calorie & Macro <span class="text-[#e2ff38]">Calculator</span>
+                Calorie & Macro <span class="text-gradient-orange">Calculator</span>
             </h3>
-            <p class="text-xs text-gray-400 mt-1">Calculate your optimal daily protein, carbohydrates, and fats tailored to your athletic goals.</p>
+            <p class="text-xs text-slate-400 mt-1">Calculate your optimal daily protein, carbohydrates, and fats tailored to your athletic goals.</p>
         </div>
 
         <!-- Metric / Imperial Toggle -->
-        <div class="flex items-center gap-2 bg-[#182030] p-1.5 rounded-xl border border-white/10 self-start md:self-auto">
+        <div class="flex items-center gap-2 bg-[#111624] p-1.5 rounded-xl border border-white/10 self-start md:self-auto">
             <button 
                 type="button" 
                 id="unit-metric" 
                 onclick="setCalculatorUnit('metric')" 
-                class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all bg-[#e2ff38] text-black shadow-sm cursor-pointer"
+                class="px-3.5 py-1.5 rounded-lg text-xs font-black transition-all btn-glow-orange text-white shadow-sm cursor-pointer"
             >
                 Metric (kg/cm)
             </button>
@@ -25,7 +26,7 @@
                 type="button" 
                 id="unit-imperial" 
                 onclick="setCalculatorUnit('imperial')" 
-                class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition-all cursor-pointer"
+                class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition-all cursor-pointer"
             >
                 Imperial (lbs/in)
             </button>
@@ -40,130 +41,132 @@
             <!-- Gender & Age -->
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1.5">Gender</label>
+                    <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Gender</label>
                     <div class="grid grid-cols-2 gap-2">
-                        <button type="button" onclick="setCalcGender('male')" id="gender-male" class="py-2.5 px-3 rounded-xl border border-[#e2ff38] bg-[#e2ff38]/10 text-[#e2ff38] text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer">
+                        <button type="button" onclick="setCalcGender('male')" id="gender-male" class="py-2.5 px-3 rounded-xl border border-[#ff5e14] bg-[#ff5e14]/15 text-[#ff9e58] text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer">
                             <i class="fa-solid fa-mars"></i> Male
                         </button>
-                        <button type="button" onclick="setCalcGender('female')" id="gender-female" class="py-2.5 px-3 rounded-xl border border-white/10 bg-[#182030] text-gray-400 hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer">
+                        <button type="button" onclick="setCalcGender('female')" id="gender-female" class="py-2.5 px-3 rounded-xl border border-white/10 bg-[#111624] text-slate-400 hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer">
                             <i class="fa-solid fa-venus"></i> Female
                         </button>
                     </div>
                 </div>
 
                 <div>
-                    <label for="calc-age" class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1.5">Age (Years)</label>
-                    <input type="number" id="calc-age" value="26" min="14" max="90" oninput="calculateMacros()" class="w-full bg-[#182030] border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]">
+                    <label for="calc-age" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Age (Years)</label>
+                    <input type="number" id="calc-age" value="26" min="14" max="90" oninput="calculateMacros()" class="w-full bg-[#111624] border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]">
                 </div>
             </div>
 
             <!-- Height & Weight -->
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label id="label-height" for="calc-height" class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1.5">Height (cm)</label>
-                    <input type="number" id="calc-height" value="180" min="100" max="230" oninput="calculateMacros()" class="w-full bg-[#182030] border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]">
+                    <label id="label-height" for="calc-height" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Height (cm)</label>
+                    <input type="number" id="calc-height" value="180" min="100" max="230" oninput="calculateMacros()" class="w-full bg-[#111624] border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]">
                 </div>
 
                 <div>
-                    <label id="label-weight" for="calc-weight" class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1.5">Weight (kg)</label>
-                    <input type="number" step="0.5" id="calc-weight" value="78.5" min="35" max="250" oninput="calculateMacros()" class="w-full bg-[#182030] border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]">
+                    <label id="label-weight" for="calc-weight" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Weight (kg)</label>
+                    <input type="number" step="0.5" id="calc-weight" value="78.5" min="35" max="250" oninput="calculateMacros()" class="w-full bg-[#111624] border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]">
                 </div>
             </div>
 
             <!-- Activity Level -->
             <div>
-                <label for="calc-activity" class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1.5">Weekly Training Frequency</label>
-                <select id="calc-activity" onchange="calculateMacros()" class="w-full bg-[#182030] border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]">
-                    <option value="1.2">Sedentary (Desk Job, Minimal Exercise)</option>
-                    <option value="1.375">Light Training (1-2 Days / Week)</option>
-                    <option value="1.55" selected>Moderate Training (3-5 Days Heavy Lifting)</option>
-                    <option value="1.725">Intense Athletic Training (6-7 Days High Volume)</option>
-                    <option value="1.9">Elite Competitive Athlete (2x Daily Workouts)</option>
+                <label for="calc-activity" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Weekly Training Frequency</label>
+                <select id="calc-activity" onchange="calculateMacros()" class="w-full bg-[#111624] border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]">
+                    <option value="1.2">Sedentary (Little or no exercise)</option>
+                    <option value="1.375">Lightly Active (1-3 lifting sessions / week)</option>
+                    <option value="1.55" selected>Moderately Active (3-5 intense sessions / week)</option>
+                    <option value="1.725">Very Active (6-7 intense sessions / week)</option>
+                    <option value="1.9">Athlete Elite (2x training per day / heavy labor)</option>
                 </select>
             </div>
 
             <!-- Fitness Goal -->
             <div>
-                <label for="calc-goal" class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1.5">Primary Target Goal</label>
-                <select id="calc-goal" onchange="calculateMacros()" class="w-full bg-[#182030] border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#e2ff38]">
-                    <option value="cut">Fat Loss & Definition (-500 kcal deficit)</option>
-                    <option value="recomp" selected>Lean Muscle Recomposition (High Protein, Slight Deficit)</option>
-                    <option value="maintain">Weight Maintenance & Strength Performance (0 kcal balance)</option>
-                    <option value="bulk">Hypertrophy Muscle Bulking (+400 kcal surplus)</option>
+                <label for="calc-goal" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Current Fitness Objective</label>
+                <select id="calc-goal" onchange="calculateMacros()" class="w-full bg-[#111624] border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#ff5e14]">
+                    <option value="cut">Fat Loss & Conditioning (-500 kcal deficit)</option>
+                    <option value="recomp">Body Recomposition & Lean Muscle (-250 kcal)</option>
+                    <option value="maintain">Maintain Current Weight & Performance</option>
+                    <option value="bulk" selected>Hypertrophy & Strength Bulk (+400 kcal surplus)</option>
                 </select>
             </div>
         </div>
 
-        <!-- Right: Results Dashboard (5 cols) -->
-        <div class="lg:col-span-5 bg-gradient-to-b from-[#182030] to-[#121622] border border-white/15 rounded-2xl p-6 sm:p-7 space-y-6 shadow-xl relative overflow-hidden">
+        <!-- Right: Results Card (5 cols) -->
+        <div class="lg:col-span-5 bg-[#0a0d14] border border-white/15 rounded-2xl p-6 shadow-xl space-y-6">
+            <!-- Daily Calories Target -->
             <div class="text-center pb-5 border-b border-white/10">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-1">Target Daily Energy Intake</span>
-                <div class="flex items-baseline justify-center gap-1.5">
-                    <span id="res-calories" class="font-heading text-4xl sm:text-5xl font-black text-[#e2ff38]">2,480</span>
-                    <span class="text-xs font-bold text-gray-400">kcal / day</span>
+                <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">Recommended Daily Intake</span>
+                <div class="flex items-baseline justify-center gap-2">
+                    <span id="res-calories" class="font-heading text-4xl sm:text-5xl font-black text-gradient-orange">2,480</span>
+                    <span class="text-xs uppercase font-bold text-slate-400">kcal / day</span>
                 </div>
-                <div class="flex items-center justify-center gap-4 text-[11px] text-gray-400 mt-2">
+                <div class="mt-2 text-[11px] text-slate-400 flex items-center justify-center gap-3">
                     <span>BMR: <strong id="res-bmr" class="text-white">1,780</strong> kcal</span>
-                    <span>&bull;</span>
+                    <span>•</span>
                     <span>TDEE: <strong id="res-tdee" class="text-white">2,760</strong> kcal</span>
                 </div>
             </div>
 
-            <!-- Macros Breakdown Progress -->
-            <div class="space-y-4 text-xs">
+            <!-- Macronutrient Breakdown -->
+            <div class="space-y-4">
+                <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Target Macronutrient Split</span>
+
                 <!-- Protein -->
-                <div>
-                    <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold text-white flex items-center gap-1.5">
-                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
-                            Protein (2.2g / kg)
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between text-xs">
+                        <span class="text-slate-300 font-semibold flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                            <span>Protein (2.2g / kg)</span>
                         </span>
-                        <span class="font-mono font-bold text-rose-400"><span id="res-protein">173</span>g <span class="text-gray-400 font-normal">(<span id="res-protein-cal">692</span> kcal)</span></span>
+                        <span class="font-mono font-bold text-cyan-400"><span id="res-protein">173</span>g <span class="text-slate-500 font-normal">(<span id="res-protein-cal">692</span> kcal)</span></span>
                     </div>
-                    <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden">
-                        <div id="bar-protein" class="bg-rose-500 h-full rounded-full transition-all duration-500" style="width: 30%"></div>
+                    <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                        <div id="bar-protein" class="bg-cyan-400 h-full rounded-full transition-all duration-500" style="width: 28%"></div>
                     </div>
                 </div>
 
-                <!-- Carbs -->
-                <div>
-                    <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold text-white flex items-center gap-1.5">
-                            <span class="w-2.5 h-2.5 rounded-full bg-[#e2ff38]"></span>
-                            Carbohydrates
+                <!-- Carbohydrates -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between text-xs">
+                        <span class="text-slate-300 font-semibold flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-[#ff5e14]"></span>
+                            <span>Carbohydrates</span>
                         </span>
-                        <span class="font-mono font-bold text-[#e2ff38]"><span id="res-carbs">270</span>g <span class="text-gray-400 font-normal">(<span id="res-carbs-cal">1080</span> kcal)</span></span>
+                        <span class="font-mono font-bold text-[#ff9e58]"><span id="res-carbs">270</span>g <span class="text-slate-500 font-normal">(<span id="res-carbs-cal">1080</span> kcal)</span></span>
                     </div>
-                    <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden">
-                        <div id="bar-carbs" class="bg-[#e2ff38] h-full rounded-full transition-all duration-500" style="width: 45%"></div>
+                    <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                        <div id="bar-carbs" class="bg-[#ff5e14] h-full rounded-full transition-all duration-500" style="width: 45%"></div>
                     </div>
                 </div>
 
                 <!-- Fats -->
-                <div>
-                    <div class="flex justify-between items-center mb-1">
-                        <span class="font-bold text-white flex items-center gap-1.5">
-                            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
-                            Healthy Fats
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between text-xs">
+                        <span class="text-slate-300 font-semibold flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span>
+                            <span>Healthy Fats</span>
                         </span>
-                        <span class="font-mono font-bold text-cyan-400"><span id="res-fats">70</span>g <span class="text-gray-400 font-normal">(<span id="res-fats-cal">630</span> kcal)</span></span>
+                        <span class="font-mono font-bold text-rose-400"><span id="res-fats">78</span>g <span class="text-slate-500 font-normal">(<span id="res-fats-cal">708</span> kcal)</span></span>
                     </div>
-                    <div class="w-full bg-black/40 rounded-full h-2 overflow-hidden">
-                        <div id="bar-fats" class="bg-cyan-400 h-full rounded-full transition-all duration-500" style="width: 25%"></div>
+                    <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                        <div id="bar-fats" class="bg-rose-400 h-full rounded-full transition-all duration-500" style="width: 27%"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Hydration Recommendation -->
-            <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-                <span class="text-gray-400 flex items-center gap-1.5">
+            <!-- Hydration Metric -->
+            <div class="p-3.5 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between text-xs">
+                <span class="text-slate-300 flex items-center gap-2">
                     <i class="fa-solid fa-droplet text-cyan-400"></i>
-                    Optimal Hydration Target:
+                    <span>Optimal Water Intake</span>
                 </span>
-                <span id="res-water" class="font-bold text-white font-mono">3.8 Liters / day</span>
+                <strong id="res-water" class="font-mono text-cyan-300 font-bold">3.5 Liters / day</strong>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -181,20 +184,16 @@ function setCalculatorUnit(unit) {
     const inW = document.getElementById('calc-weight');
 
     if (unit === 'metric') {
-        btnM.classList.replace('text-gray-400', 'text-black');
-        btnM.classList.add('bg-[#e2ff38]');
-        btnI.classList.replace('text-black', 'text-gray-400');
-        btnI.classList.remove('bg-[#e2ff38]');
+        btnM.className = 'px-3.5 py-1.5 rounded-lg text-xs font-black transition-all btn-glow-orange text-white shadow-sm cursor-pointer';
+        btnI.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition-all cursor-pointer';
 
         lblH.textContent = 'Height (cm)';
         lblW.textContent = 'Weight (kg)';
         inH.value = Math.round(inH.value * 2.54) || 180;
         inW.value = Math.round(inW.value * 0.453592) || 78.5;
     } else {
-        btnI.classList.replace('text-gray-400', 'text-black');
-        btnI.classList.add('bg-[#e2ff38]');
-        btnM.classList.replace('text-black', 'text-gray-400');
-        btnM.classList.remove('bg-[#e2ff38]');
+        btnI.className = 'px-3.5 py-1.5 rounded-lg text-xs font-black transition-all btn-glow-orange text-white shadow-sm cursor-pointer';
+        btnM.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition-all cursor-pointer';
 
         lblH.textContent = 'Height (Inches)';
         lblW.textContent = 'Weight (lbs)';
@@ -209,11 +208,11 @@ function setCalcGender(gender) {
     const bM = document.getElementById('gender-male');
     const bF = document.getElementById('gender-female');
     if (gender === 'male') {
-        bM.className = 'py-2.5 px-3 rounded-xl border border-[#e2ff38] bg-[#e2ff38]/10 text-[#e2ff38] text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer';
-        bF.className = 'py-2.5 px-3 rounded-xl border border-white/10 bg-[#182030] text-gray-400 hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer';
+        bM.className = 'py-2.5 px-3 rounded-xl border border-[#ff5e14] bg-[#ff5e14]/15 text-[#ff9e58] text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer';
+        bF.className = 'py-2.5 px-3 rounded-xl border border-white/10 bg-[#111624] text-slate-400 hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer';
     } else {
-        bF.className = 'py-2.5 px-3 rounded-xl border border-[#e2ff38] bg-[#e2ff38]/10 text-[#e2ff38] text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer';
-        bM.className = 'py-2.5 px-3 rounded-xl border border-white/10 bg-[#182030] text-gray-400 hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer';
+        bF.className = 'py-2.5 px-3 rounded-xl border border-[#ff5e14] bg-[#ff5e14]/15 text-[#ff9e58] text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer';
+        bM.className = 'py-2.5 px-3 rounded-xl border border-white/10 bg-[#111624] text-slate-400 hover:text-white text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer';
     }
     calculateMacros();
 }

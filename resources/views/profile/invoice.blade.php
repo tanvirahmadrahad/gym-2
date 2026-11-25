@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Official Invoice {{ $invoice['id'] }} - FITNES Training</title>
+    <title>Official Invoice {{ $invoice['id'] }} — Gymstick Training</title>
 
     <!-- Google Fonts: Oswald & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,10 +54,10 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(-30deg);
-            font-size: 110px;
+            font-size: 100px;
             font-weight: 900;
             font-family: 'Oswald', sans-serif;
-            color: rgba(226, 255, 56, 0.03);
+            color: rgba(255, 94, 20, 0.04);
             pointer-events-none;
             user-select: none;
             white-space: nowrap;
@@ -80,11 +80,11 @@
         }
     </style>
 </head>
-<body class="bg-[#080a0e] text-[#f3f4f6] font-sans antialiased min-h-screen py-6 px-3 sm:px-6">
+<body class="bg-[#080a0f] text-[#f3f4f6] font-sans antialiased min-h-screen py-6 px-3 sm:px-6">
 
     <!-- Screen Navigation & Action Bar (Hidden on Print) -->
-    <div class="max-w-4xl mx-auto mb-6 flex flex-wrap items-center justify-between gap-4 no-print bg-[#131722] p-4 rounded-xl border border-white/10 shadow-xl">
-        <a href="{{ route('profile') }}" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-[#e2ff38] transition-colors">
+    <div class="max-w-4xl mx-auto mb-6 flex flex-wrap items-center justify-between gap-4 no-print bg-[#0e121a] p-4 rounded-2xl border border-white/10 shadow-xl">
+        <a href="{{ route('profile') }}" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-[#ff5e14] transition-colors">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Back to Athlete Profile</span>
         </a>
@@ -94,7 +94,7 @@
                 type="button" 
                 id="btn-download-pdf"
                 onclick="downloadSinglePagePdf()" 
-                class="bg-rose-600 hover:bg-rose-500 text-white font-extrabold text-xs uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all cursor-pointer flex items-center gap-2 shadow-lg shadow-rose-600/25"
+                class="bg-rose-600 hover:bg-rose-500 text-white font-extrabold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl transition-all cursor-pointer flex items-center gap-2 shadow-lg shadow-rose-600/25"
             >
                 <i class="fa-solid fa-file-pdf"></i>
                 <span id="btn-download-pdf-label">Download PDF (1 Page)</span>
@@ -102,7 +102,7 @@
             <button 
                 type="button" 
                 onclick="window.print()" 
-                class="bg-[#e2ff38] hover:bg-[#d0ee27] text-black font-extrabold text-xs uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all cursor-pointer flex items-center gap-2 shadow-lg shadow-[#e2ff38]/20"
+                class="btn-glow-orange text-white font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl transition-all cursor-pointer flex items-center gap-2 shadow-lg shadow-[#ff5e14]/30"
             >
                 <i class="fa-solid fa-print"></i>
                 <span>Print Official Invoice</span>
@@ -111,192 +111,183 @@
     </div>
 
     <!-- Official Full-Page Invoice Container -->
-    <div class="invoice-page max-w-4xl mx-auto bg-[#131722] border-2 border-white/15 rounded-2xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+    <div class="invoice-page max-w-4xl mx-auto bg-[#0e121a] border-2 border-white/15 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
         
-        <!-- Background Gym Watermark -->
-        <div class="invoice-watermark">FITNES TRAINING</div>
+        <!-- Subtle Vector Watermark -->
+        <div class="invoice-watermark">GYMSTICK CLUB</div>
 
-        <!-- 1. Header Section: Gym Logo & Official Tax Information -->
-        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-6 pb-8 border-b-2 border-white/10 relative z-10">
-            <!-- Brand Logo & Details -->
+        <!-- 1. Invoice Header & Brand Identity -->
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-6 pb-6 border-b border-white/10 relative z-10">
             <div>
+                <!-- Brand Lockup -->
                 <div class="flex items-center gap-3 mb-3">
-                    <div class="flex items-center gap-[3px] h-9">
-                        <span class="w-[5px] h-4 bg-[#e2ff38] rounded-full"></span>
-                        <span class="w-[6px] h-8 bg-[#e2ff38] rounded-full"></span>
-                        <span class="w-[6px] h-6 bg-[#e2ff38] rounded-full"></span>
-                        <span class="w-[5px] h-3 bg-[#e2ff38] rounded-full"></span>
+                    <div class="flex items-center gap-[3px] h-8">
+                        <span class="w-[5px] h-4 bg-[#ff5e14] rounded-full"></span>
+                        <span class="w-[6px] h-8 bg-gradient-to-t from-[#ff5e14] to-[#ff9e58] rounded-full"></span>
+                        <span class="w-[6px] h-6 bg-gradient-to-t from-[#ff5e14] to-[#ff9e58] rounded-full"></span>
+                        <span class="w-[5px] h-3 bg-[#ff5e14] rounded-full"></span>
                     </div>
-                    <div class="flex flex-col leading-none">
-                        <span class="font-heading text-3xl font-black tracking-wider text-white">FITNES</span>
-                        <span class="text-[10px] tracking-[0.3em] text-[#e2ff38] font-bold uppercase">TRAINING & ATHLETICS</span>
+                    <div>
+                        <span class="font-heading text-3xl font-black tracking-wider text-white">Gymstick</span>
+                        <span class="text-[10px] tracking-[0.3em] text-[#ff5e14] font-bold uppercase block">TRAINING & ATHLETICS</span>
                     </div>
                 </div>
-
-                <div class="text-xs text-gray-400 space-y-1">
-                    <p><i class="fa-solid fa-location-dot text-[#e2ff38] w-4"></i> 123 Fitness Ave, Workout City, Suite 400</p>
-                    <p><i class="fa-solid fa-envelope text-[#e2ff38] w-4"></i> billing@fitnestraining.com &bull; +1 (234) 567-890</p>
-                    <p><i class="fa-solid fa-shield-halved text-[#e2ff38] w-4"></i> BIN/Tax ID: <strong class="text-white">TX-88294012</strong> &bull; License: <strong class="text-white">LIC-2024-NY-9021</strong></p>
+                <!-- Gym Details -->
+                <div class="text-xs text-slate-400 space-y-0.5 font-medium">
+                    <p><i class="fa-solid fa-location-dot text-[#ff5e14] w-4"></i> 123 Fitness Ave, Workout City, Suite 400</p>
+                    <p><i class="fa-solid fa-envelope text-[#ff5e14] w-4"></i> billing@gymstickpro.com &bull; +1 (234) 567-890</p>
+                    <p><i class="fa-solid fa-shield-halved text-[#ff5e14] w-4"></i> BIN/Tax ID: <strong class="text-white">TX-88294012</strong> &bull; License: <strong class="text-white">LIC-2024-NY-9021</strong></p>
                 </div>
             </div>
 
-            <!-- Invoice Heading & Paid Stamp -->
-            <div class="flex flex-col sm:items-end text-left sm:text-right">
-                <span class="px-3 py-1 rounded-full bg-[#e2ff38]/10 text-[#e2ff38] text-[10px] font-extrabold uppercase tracking-widest border border-[#e2ff38]/30 inline-block mb-2">
-                    Official Tax Invoice
+            <!-- Invoice Status & Number -->
+            <div class="text-left sm:text-right">
+                <span class="px-3 py-1 rounded-full bg-[#ff5e14]/10 text-[#ff9e58] text-[10px] font-extrabold uppercase tracking-widest border border-[#ff5e14]/30 inline-block mb-2">
+                    Tax Receipt & Statement
                 </span>
-                <h1 class="font-heading text-2xl sm:text-3xl font-black text-white tracking-tight">
-                    {{ $invoice['id'] }}
+                <h1 class="font-heading text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
+                    INVOICE
                 </h1>
-                <div class="text-xs text-gray-400 mt-1">
-                    Date of Issue: <strong class="text-white">{{ $invoice['date'] }}</strong>
+                <div class="font-mono text-xs text-slate-400 mt-1">
+                    Invoice No: <strong class="text-white">{{ $invoice['id'] }}</strong>
+                </div>
+                <div class="text-xs text-slate-400">
+                    Issued: <strong class="text-white">{{ $invoice['date'] }}</strong>
                 </div>
 
-                <!-- Green Paid Stamp -->
-                <div class="mt-4">
-                    <div class="paid-stamp">
-                        <i class="fa-solid fa-circle-check mr-1.5 text-base"></i> PAID IN FULL
-                    </div>
+                <div class="mt-3">
+                    <span class="paid-stamp">
+                        PAID IN FULL
+                    </span>
                 </div>
             </div>
         </div>
 
-        <!-- 2. Member & Invoice Meta Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 py-8 border-b border-white/10 relative z-10 text-xs">
-            <!-- Billed To -->
-            <div class="bg-[#182030] p-5 rounded-xl border border-white/5 space-y-2">
-                <div class="flex items-center justify-between pb-2 border-b border-white/10">
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Billed To (Athlete)</span>
-                    <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-bold text-[9px] uppercase">Active Member</span>
-                </div>
-                <div class="pt-1">
-                    <div class="font-heading text-lg font-bold text-white">{{ $profile['name'] }}</div>
-                    <div class="font-mono text-[#e2ff38] font-bold mt-0.5">Gym ID: {{ $profile['gym_id'] }}</div>
-                </div>
-                <div class="text-gray-300 space-y-1 pt-1">
-                    <p><i class="fa-regular fa-envelope text-gray-500 mr-1.5"></i> {{ $profile['email'] }}</p>
-                    <p><i class="fa-solid fa-phone text-gray-500 mr-1.5"></i> {{ $profile['phone'] }}</p>
-                    <p><i class="fa-solid fa-key text-gray-500 mr-1.5"></i> {{ $profile['locker_number'] }}</p>
-                </div>
+        <!-- 2. Billed To & Payment Meta -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 py-6 border-b border-white/10 relative z-10 text-xs">
+            <div>
+                <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">Billed To (Member):</span>
+                <div class="font-heading text-lg font-bold text-white">{{ $profile['name'] }}</div>
+                <div class="font-mono text-[#ff9e58] font-bold mt-0.5">Gym ID: {{ $profile['gym_id'] }}</div>
+                <div class="text-slate-300 mt-1">{{ $profile['email'] }}</div>
+                <div class="text-slate-400">{{ $profile['phone'] }}</div>
+                <div class="text-slate-400 mt-1">Active Locker: <strong class="text-white font-mono">{{ $profile['locker_number'] }}</strong></div>
             </div>
 
-            <!-- Invoice Details -->
-            <div class="bg-[#182030] p-5 rounded-xl border border-white/5 space-y-2">
-                <div class="flex items-center justify-between pb-2 border-b border-white/10">
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Payment Summary</span>
-                    <span class="font-mono text-gray-400 text-[10px]">AUTH: {{ $invoice['auth_code'] }}</span>
-                </div>
-                <div class="space-y-1.5 pt-1 text-gray-300">
-                    <div class="flex justify-between">
-                        <span class="text-gray-400">Billing Coverage:</span>
-                        <span class="font-semibold text-white">{{ $invoice['billing_period'] }}</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-400">Payment Method:</span>
-                        <span class="font-semibold text-white flex items-center gap-1.5">
-                            <i class="fa-brands fa-cc-visa text-blue-400"></i> {{ $invoice['method'] }}
-                        </span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-400">Payment Status:</span>
-                        <span class="font-bold text-emerald-400 uppercase flex items-center gap-1">
-                            <i class="fa-solid fa-circle-check text-xs"></i> Verified & Cleared
-                        </span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-400">Currency:</span>
-                        <span class="font-semibold text-white">USD ($)</span>
-                    </div>
-                </div>
+            <div class="sm:text-right space-y-1 text-slate-300">
+                <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">Transaction Details:</span>
+                <div>Payment Method: <strong class="text-white">{{ $invoice['method'] }}</strong></div>
+                <div>Billing Period: <strong class="text-white font-mono">{{ $invoice['billing_period'] }}</strong></div>
+                <div>Authorization Code: <strong class="text-white font-mono">{{ $invoice['auth_code'] }}</strong></div>
+                <div>Turnstile Access: <strong class="text-emerald-400">UNLIMITED 24/7</strong></div>
+                <div class="text-[11px] text-slate-400 pt-1">Status: <span class="text-emerald-400 font-bold">Processed Successfully</span></div>
             </div>
         </div>
 
-        <!-- 3. Itemized Table -->
-        <div class="py-8 border-b-2 border-white/10 relative z-10">
-            <table class="w-full text-left text-xs border-collapse">
+        <!-- 3. Line Items Table -->
+        <div class="py-6 border-b border-white/10 relative z-10">
+            <table class="w-full text-left text-xs">
                 <thead>
-                    <tr class="bg-[#182030] text-gray-400 uppercase text-[10px] tracking-wider border-b border-white/10">
-                        <th class="py-3 px-4 font-bold">Item #</th>
-                        <th class="py-3 px-4 font-bold">Plan & Description</th>
-                        <th class="py-3 px-4 font-bold text-center">Period</th>
-                        <th class="py-3 px-4 font-bold text-center">Qty</th>
-                        <th class="py-3 px-4 font-bold text-right">Rate</th>
-                        <th class="py-3 px-4 font-bold text-right">Tax (6%)</th>
-                        <th class="py-3 px-4 font-bold text-right">Total</th>
+                    <tr class="bg-[#141a27] text-slate-300 uppercase tracking-wider text-[10px] font-bold border-b border-white/10">
+                        <th class="py-3 px-4">Item & Description</th>
+                        <th class="py-3 px-4">Period Covered</th>
+                        <th class="py-3 px-4 text-center">Qty</th>
+                        <th class="py-3 px-4 text-right">Amount</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-white/5 text-gray-300">
+                <tbody class="divide-y divide-white/5">
                     <tr>
-                        <td class="py-4 px-4 font-mono font-bold text-white align-top">01</td>
                         <td class="py-4 px-4 align-top">
-                            <div class="font-bold text-white text-sm">{{ $invoice['plan'] }}</div>
-                            <div class="text-gray-400 text-[11px] mt-1 leading-relaxed max-w-md">
+                            <strong class="text-white font-bold block text-sm">{{ $invoice['plan'] }}</strong>
+                            <p class="text-slate-400 text-[11px] mt-0.5 max-w-sm">
                                 {{ $invoice['description'] }}
-                            </div>
+                            </p>
                         </td>
-                        <td class="py-4 px-4 text-center align-top text-gray-400">1 Month</td>
-                        <td class="py-4 px-4 text-center align-top font-bold text-white">1</td>
-                        <td class="py-4 px-4 text-right align-top font-semibold text-white">{{ $invoice['subtotal'] }}</td>
-                        <td class="py-4 px-4 text-right align-top text-gray-400">{{ $invoice['tax'] }}</td>
-                        <td class="py-4 px-4 text-right align-top font-heading text-sm font-bold text-[#e2ff38]">{{ $invoice['amount'] }}</td>
+                        <td class="py-4 px-4 align-top font-mono text-slate-300">
+                            {{ $invoice['billing_period'] }}
+                        </td>
+                        <td class="py-4 px-4 align-top text-center text-slate-300 font-mono">
+                            1
+                        </td>
+                        <td class="py-4 px-4 text-right align-top font-heading text-sm font-bold text-gradient-orange">{{ $invoice['amount'] }}</td>
                     </tr>
                 </tbody>
             </table>
 
-            <!-- Calculation Breakdown -->
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 pt-6 text-xs">
-                <!-- Barcode & Verification Note -->
-                <div class="space-y-3">
-                    <div class="p-3 bg-[#182030] rounded-xl border border-white/5 inline-block">
-                        <div class="h-9 flex items-center justify-between gap-[2px] w-56">
-                            @for ($i = 0; $i < 48; $i++)
-                                <span class="bg-white h-full {{ $i % 5 == 0 ? 'w-[3px]' : ($i % 3 == 0 ? 'w-[1.5px]' : 'w-[1px]') }}"></span>
-                            @endfor
+            <!-- Barcode & Totals Summary -->
+            <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-6 pt-4">
+                <!-- Barcode Graphics & Verification -->
+                <div class="flex flex-col items-center sm:items-start gap-2">
+                    <div class="p-2.5 bg-white rounded-lg inline-block shadow-md">
+                        <!-- Code 128 Simulated Barcode -->
+                        <div class="flex items-center h-8 gap-[2px]">
+                            <span class="w-[2px] h-full bg-black"></span>
+                            <span class="w-[1px] h-full bg-black"></span>
+                            <span class="w-[3px] h-full bg-black"></span>
+                            <span class="w-[1px] h-full bg-black"></span>
+                            <span class="w-[2px] h-full bg-black"></span>
+                            <span class="w-[4px] h-full bg-black"></span>
+                            <span class="w-[1px] h-full bg-black"></span>
+                            <span class="w-[3px] h-full bg-black"></span>
+                            <span class="w-[2px] h-full bg-black"></span>
+                            <span class="w-[1px] h-full bg-black"></span>
+                            <span class="w-[4px] h-full bg-black"></span>
+                            <span class="w-[2px] h-full bg-black"></span>
+                            <span class="w-[1px] h-full bg-black"></span>
+                            <span class="w-[3px] h-full bg-black"></span>
+                            <span class="w-[2px] h-full bg-black"></span>
+                            <span class="w-[4px] h-full bg-black"></span>
+                            <span class="w-[1px] h-full bg-black"></span>
+                            <span class="w-[2px] h-full bg-black"></span>
+                            <span class="w-[3px] h-full bg-black"></span>
+                            <span class="w-[1px] h-full bg-black"></span>
+                            <span class="w-[4px] h-full bg-black"></span>
+                            <span class="w-[2px] h-full bg-black"></span>
                         </div>
-                        <div class="text-[8px] font-mono text-gray-400 tracking-[0.3em] mt-1 text-center">
+                        <div class="text-[8px] font-mono text-slate-600 tracking-[0.3em] mt-1 text-center">
                             {{ $invoice['id'] }}-VERIFIED-{{ $invoice['auth_code'] }}
                         </div>
                     </div>
-                    <p class="text-[10px] text-gray-400 max-w-sm">
-                        * Electronic Gym Invoice generated by Fitnes Club Management System. Valid for official tax deductions and employer fitness reimbursement.
+                    <p class="text-[10px] text-slate-400 max-w-sm">
+                        * Electronic Gym Invoice generated by Gymstick Club Management System. Valid for official tax deductions and employer fitness reimbursement.
                     </p>
                 </div>
 
                 <!-- Totals Box -->
-                <div class="w-full sm:w-72 bg-[#182030] p-4 rounded-xl border border-white/10 space-y-2">
-                    <div class="flex justify-between text-gray-400">
+                <div class="w-full sm:w-72 bg-[#141a27] p-4 rounded-2xl border border-white/10 space-y-2">
+                    <div class="flex justify-between text-slate-400">
                         <span>Subtotal:</span>
                         <span class="font-semibold text-white">{{ $invoice['subtotal'] }}</span>
                     </div>
-                    <div class="flex justify-between text-gray-400">
+                    <div class="flex justify-between text-slate-400">
                         <span>Tax & Maintenance (6%):</span>
                         <span class="font-semibold text-white">{{ $invoice['tax'] }}</span>
                     </div>
-                    <div class="flex justify-between text-gray-400">
+                    <div class="flex justify-between text-slate-400">
                         <span>Discount Applied:</span>
                         <span class="font-semibold text-emerald-400">$0.00</span>
                     </div>
                     <div class="flex justify-between text-white font-heading text-lg font-black pt-2 border-t border-white/10">
                         <span>TOTAL PAID:</span>
-                        <span class="text-[#e2ff38]">{{ $invoice['amount'] }}</span>
+                        <span class="text-gradient-orange">{{ $invoice['amount'] }}</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- 4. Official Signatory & Footer -->
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10 text-xs text-gray-400">
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10 text-xs text-slate-400">
             <div>
-                <p class="font-bold text-white mb-0.5">FITNES GYM & WELLNESS ENTERPRISE</p>
+                <p class="font-bold text-white mb-0.5">GYMSTICK TRAINING ENTERPRISE</p>
                 <p class="text-[11px]">All memberships are non-transferable. 24/7 access granted via biometric RFID pass.</p>
             </div>
 
             <!-- Authorized Signatory -->
             <div class="text-center sm:text-right">
                 <div class="h-10 flex items-center justify-center sm:justify-end">
-                    <span class="font-heading text-xl italic text-gray-300 tracking-wider font-light">Alex Cox</span>
+                    <span class="font-heading text-xl italic text-slate-300 tracking-wider font-light">Alex Cox</span>
                 </div>
-                <div class="border-t border-white/20 pt-1 text-[10px] uppercase font-bold text-gray-400">
+                <div class="border-t border-white/20 pt-1 text-[10px] uppercase font-bold text-slate-400">
                     Authorized Signatory &bull; Chief Athletic Director
                 </div>
             </div>
@@ -304,8 +295,8 @@
     </div>
 
     <!-- Small Footer -->
-    <div class="text-center text-[10px] text-gray-500 py-6 no-print">
-        &copy; 2026 FITNES Training Club. All rights reserved.
+    <div class="text-center text-[10px] text-slate-500 py-6 no-print">
+        &copy; 2026 Gymstick Training Club. All rights reserved.
     </div>
 
     <script>
@@ -321,12 +312,12 @@
         const invoiceElement = document.querySelector('.invoice-page');
         const opt = {
             margin: [4, 4, 4, 4],
-            filename: 'FITNES-Receipt-{{ $invoice['id'] }}.pdf',
+            filename: 'Gymstick-Receipt-{{ $invoice['id'] }}.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { 
                 scale: 2, 
                 useCORS: true, 
-                backgroundColor: '#131722',
+                backgroundColor: '#0e121a',
                 scrollY: 0
             },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
