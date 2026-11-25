@@ -1,5 +1,13 @@
 <?php
 
+// Ensure application encryption key exists in serverless environment
+if (empty($_ENV['APP_KEY']) && empty(getenv('APP_KEY'))) {
+    $fallbackKey = 'base64:w3sT5/yKl+RTyvilp+GoWuyvMKkdT44Z/VOScLElI5Y=';
+    putenv('APP_KEY='.$fallbackKey);
+    $_ENV['APP_KEY'] = $fallbackKey;
+    $_SERVER['APP_KEY'] = $fallbackKey;
+}
+
 // Ensure writable directories in /tmp for serverless environment
 $storagePaths = [
     '/tmp/storage/framework/views',
@@ -20,8 +28,12 @@ foreach ($storagePaths as $path) {
 $sqliteTarget = '/tmp/database.sqlite';
 $seedSource = __DIR__.'/../database/seed.db';
 
-if (! file_exists($sqliteTarget) && file_exists($seedSource)) {
-    copy($seedSource, $sqliteTarget);
+if (! file_exists($sqliteTarget)) {
+    if (file_exists($seedSource)) {
+        copy($seedSource, $sqliteTarget);
+    } else {
+        touch($sqliteTarget);
+    }
     chmod($sqliteTarget, 0666);
 }
 

@@ -36,6 +36,7 @@
   "outputDirectory": "public",
   "env": {
     "APP_ENV": "production",
+    "APP_KEY": "base64:w3sT5/yKl+RTyvilp+GoWuyvMKkdT44Z/VOScLElI5Y=",
     "APP_DEBUG": "false",
     "LOG_CHANNEL": "stderr",
     "CACHE_STORE": "array",
