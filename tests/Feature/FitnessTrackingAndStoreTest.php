@@ -81,6 +81,43 @@ class FitnessTrackingAndStoreTest extends TestCase
     }
 
     /**
+     * Test guest can checkout without being logged in.
+     */
+    public function test_guest_can_checkout_without_authentication(): void
+    {
+        $response = $this->post(route('store.checkout'), [
+            'payment_method' => 'bKash Mobile Banking',
+            'trx_id' => 'BK9XGUEST123',
+            'items' => json_encode([
+                [
+                    'id' => 1,
+                    'name' => '100% Whey Gold Isolate (5 lbs)',
+                    'price' => 64.99,
+                    'quantity' => 1,
+                ],
+            ]),
+            'total_amount' => 64.99,
+        ]);
+
+        $response->assertRedirect(route('store.index'));
+        $response->assertSessionHas('success');
+
+        $this->assertDatabaseHas('store_orders', [
+            'trx_id' => 'BK9XGUEST123',
+            'payment_method' => 'bKash Mobile Banking',
+        ]);
+    }
+
+    /**
+     * Test GET /store/checkout gracefully redirects to store index.
+     */
+    public function test_get_checkout_redirects_to_store(): void
+    {
+        $response = $this->get('/store/checkout');
+        $response->assertRedirect(route('store.index'));
+    }
+
+    /**
      * Test member profile page loads with tracking sections.
      */
     public function test_member_profile_page_loads_with_fitness_tracking(): void

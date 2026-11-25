@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\StoreOrder;
 use App\Models\StoreProduct;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -52,17 +53,18 @@ class StoreController extends Controller
 
         $items = is_string($validated['items']) ? json_decode($validated['items'], true) : $validated['items'];
         $user = $request->user();
+        $userId = $user?->id ?? User::first()?->id ?? 1;
 
-        $orderCode = 'FIT-ORD-'.strtoupper(substr(uniqid(), -6));
+        $orderCode = 'GYM-ORD-'.strtoupper(substr(uniqid(), -6));
         $trxId = $validated['trx_id'] ?? strtoupper(substr($validated['payment_method'], 0, 3)).'-'.rand(100000, 999999);
 
         $order = StoreOrder::create([
-            'user_id' => $user->id,
+            'user_id' => $userId,
             'order_code' => $orderCode,
             'total_amount' => $validated['total_amount'],
             'payment_method' => $validated['payment_method'],
             'trx_id' => $trxId,
-            'items_json' => $items,
+            'items_json' => $items ?? [],
             'status' => 'PAID & READY FOR PICKUP',
             'shipping_address' => 'Pick up at Gym Front Reception Desk (Locker Delivery Available)',
         ]);

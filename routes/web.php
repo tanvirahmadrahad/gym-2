@@ -20,6 +20,7 @@ Route::get('/api/blog/{slug}', [BlogController::class, 'apiShow'])->name('api.bl
 
 // Gym Supplement & Gear Store Routes
 Route::get('/store', [StoreController::class, 'index'])->name('store.index');
+Route::get('/store/checkout', fn () => redirect()->route('store.index'));
 Route::post('/store/checkout', [StoreController::class, 'checkout'])->name('store.checkout');
 
 // Authentication Routes (Guest Only)
